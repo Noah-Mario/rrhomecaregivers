@@ -8,7 +8,7 @@ import Contact from "./Pages/Contact";
 function App() {
   return (
     <>
-        <HomePage/>
+        <Contact/>
     </>
   );
 }
