@@ -1,9 +1,9 @@
 
 import './App.css';
-import Navbar from "./Components/Navbar";
-import Button from "./Components/Button";
 import HomePage from "./Pages/HomePage";
+import "bootstrap"
 import Contact from "./Pages/Contact";
+
 
 function App() {
   return (
