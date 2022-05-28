@@ -7,11 +7,32 @@
 
 .backgroundPage{
     background-color: #6c33a3;
-    background-image: linear-gradient(315deg, #6c33a3 0%, #ececec 74%);
+    background-image: linear-gradient(115deg, #6c33a3 0%, #ececec 20%);
 }
 
 .card-h {
     height: 80%;
+}
+
+.card-w{
+    width: 25%;
+}
+
+.image{
+    height:30vh;
+    width:20vw;
+    border-radius: 7%;
+}
+
+.box2 {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.rCorners2 {
+    border-radius: 25px;
+    border: 2px solid #6c33a3;
+    padding: 5px;
 }
 
 
@@ -31,6 +52,10 @@
     color: whitesmoke;
 }
 
+.card-t-purp{
+    color:#5f0a87;
+}
+
 .card-shadow {
     /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -41,12 +66,13 @@
 }
 
 .icon-size {
-    font-size: 96px;
+    font-size: 128px;
+    color: #5f0a87;
 }
 
 
 .button-36 {
-    background-color: #93E1D8;
+    background-color: #cba6f1;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;

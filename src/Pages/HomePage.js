@@ -1,6 +1,8 @@
 import "./HomePage.css"
 // import $ from "jquery"
 import Placeholder from "../img/Placeholder.jpeg"
+import Mission from "../img/rrmission.jpg"
+import Goal from "../img/rrImage3.jpg"
 
 function HomePage() {
     return (<>
@@ -15,101 +17,86 @@ function HomePage() {
             </div>
 
             {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
+            <div className="d-flex justify-content-around">
+            <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                <h1 className="text-center titleText">Our Mission</h1>
+                    <img src={Mission} className="image"/>
+                    <p className="text-center card-t-purp">Our mission is to provide compassionate and skillful home care
+                        services of superior quality to elderly and disabled persons in their performance of
+                        activities of daily living in their own homes.</p>
+                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
+            </div>
 
-            <div className="row d-flex justify-content-center justify-content-around mb-5 ">
-                <div className="col-3 card-container">
-                    <div className="mb-3 d-flex justify-content-center">
-                        {/*<img src={Mission} className="img card-img-top" alt="..."/>*/}
-                        <span className="material-icons icon-size">&#xeb9b;</span>
-                    </div>
-                    <div className="card card-h backgroundColor card-shadow">
-                        <div className="card-body">
-                            <h4 className="card-title">Our Mission</h4>
-                            <p className="card-text">Our mission is to provide compassionate and skillful home care
-                                services of superior quality to elderly and disabled persons in their performance of
-                                activities of daily living in their own homes.</p>
-                            {/*<a href="/" className="btn btn-primary">Go somewhere</a>*/}
-                        </div>
-                    </div>
+
+                <div className="d-flex justify-content-center container-fluid rCorners2 card-shadow card-w box2 row mb-5">
+                    <h1 className="text-center titleText">Our Goal</h1>
+                    <img src={Goal} className="image"/>
+                    <p className="text-center card-t-purp">Our Goal is to provide superior home care services allowing our
+                        clients to maintain their dignity and quality of life, increase their ability to lead an
+                        independent life, and integrate them into the community as much as possible.</p>
+                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
                 </div>
-                <div className="col-3 card-container">
-                    <div className="mb-3 d-flex justify-content-center">
-                        <span className="material-icons icon-size">&#xe50a;</span>
-                    </div>
-                    <div className="card backgroundColor card-h card-shadow">
-                        <div className="card-body">
-                            <h4 className="card-title">Our Goal</h4>
-                            <p className="card-text">Our Goal is to provide superior home care services allowing our
-                                clients to maintain their dignity and quality of life, increase their ability to lead an
-                                independent life, and integrate them into the community as much as possible.​</p>
-                            {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
-                        </div>
-                    </div>
-                </div>
-                <div className="col-3 card-container">
-                    <div className="mb-3 d-flex justify-content-center">
-                        <span className="material-icons icon-size">&#xf041;</span>
-                    </div>
-                    <div className="card backgroundColor card-h card-shadow">
-                        <div className="card-body">
-                            <h4 className="card-title">Payment Methods</h4>
-                            <p className="card-text">R & R Home Caregivers accepts several forms of payments. We accepts
-                                Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and
-                                Medicaid.</p>
-                            {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
-                        </div>
-                    </div>
+
+
+                <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                    {/*<img src={Mission} className="image col-4"/>*/}
+                    <h1 className="text-center titleText">Payment Methods</h1>
+                    <span className="material-icons icon-size text-center">&#xf041;</span>
+                        <p className="text-center card-t-purp">R & R Home Caregivers accepts several forms of payments. We accepts
+                            Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and
+                            Medicaid.</p>
+                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
                 </div>
             </div>
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
 
-            <div className="row d-flex justify-content-center justify-content-around mb-5 ">
-                <h1 className="text-center titleText mt-5 mb-5">
-                    Our Services
-                </h1>
-                <div className="card-body row d-flex justify-content-around">
-                    <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">
-                        <h5 className="card-title">Assistance with Personal Care</h5>
-                        <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>
-                        <div className="container-fluid d-flex justify-content-center align-self-end">
-                            <button className="button-36" role="button">Learn More</button>
-                        </div>
-                    </div>
-                    <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">
-                        <h5 className="card-title">Home Management</h5>
-                        <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered
-                            Medications, etc. (Learn More)</p>
-                        <div className="container-fluid d-flex justify-content-center align-self-end">
-                            <button className="button-36" role="button">Learn More</button>
-                        </div>
-                    </div>
-                    <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">
-                        <h5 className="card-title">Free Home Care Assessment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional
-                            content.</p>
-                        <div className="container-fluid d-flex justify-content-center align-self-end">
-                            <button className="button-36" role="button">Learn More</button>
-                        </div>
-                    </div>
-                    <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">
-                        <h5 className="card-title">Individualized Plan of Care</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional
-                            content.</p>
-                        <div className="container-fluid d-flex justify-content-center align-self-end">
-                            <button className="button-36" role="button">Learn More</button>
-                        </div>
-                    </div>
-                    <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">
-                        <h5 className="card-title">Quality Control Visits</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional
-                            content.</p>
-                        <div className="container-fluid d-flex justify-content-center align-self-end">
-                            <button className="button-36" role="button">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="row d-flex justify-content-center justify-content-around mb-5 ">*/}
+            {/*    <h1 className="text-center titleText mt-5 mb-5">*/}
+            {/*        Our Services*/}
+            {/*    </h1>*/}
+            {/*    <div className="card-body row d-flex justify-content-around">*/}
+            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
+            {/*            <h5 className="card-title">Assistance with Personal Care</h5>*/}
+            {/*            <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>*/}
+            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
+            {/*                <button className="button-36" role="button">Learn More</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
+            {/*            <h5 className="card-title">Home Management</h5>*/}
+            {/*            <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered*/}
+            {/*                Medications, etc. (Learn More)</p>*/}
+            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
+            {/*                <button className="button-36" role="button">Learn More</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
+            {/*            <h5 className="card-title">Free Home Care Assessment</h5>*/}
+            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
+            {/*                content.</p>*/}
+            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
+            {/*                <button className="button-36" role="button">Learn More</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
+            {/*            <h5 className="card-title">Individualized Plan of Care</h5>*/}
+            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
+            {/*                content.</p>*/}
+            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
+            {/*                <button className="button-36" role="button">Learn More</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
+            {/*            <h5 className="card-title">Quality Control Visits</h5>*/}
+            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
+            {/*                content.</p>*/}
+            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
+            {/*                <button className="button-36" role="button">Learn More</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
 
