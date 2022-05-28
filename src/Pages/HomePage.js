@@ -9,11 +9,9 @@ function HomePage() {
         {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 
         <div className="backgroundPage">
-            <div className="container-fluid b-image">
-                <div className="container text-center">
-                    <h1 className="display-4 my-4 titleText">Welcome to R & R Home Caregivers</h1>
-                    <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
-                </div>
+            <div className="container text-center">
+                <h1 className="display-4 titleText">Welcome to R & R Home Caregivers</h1>
+                <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
             </div>
 
             {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
@@ -50,22 +48,41 @@ function HomePage() {
             </div>
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
-            <h1 className="text-center titleText mt-5 mb-5">
-                Our Services
-            </h1>
-            <div className=" container rCorners2 card-shadow box2 mb-5">
+            <div className="d-flex justify-content-around">
+            <div>
+                <h1 className="text-center titleText mt-5 mb-5">
+                    Our Services
+                </h1>
+            <div className=" container box-width rCorners2 card-shadow box2 mb-5">
                 <ul className="card-t-purp">
-                    <li>Assistance with Personal Care: Dressing, Transferring, Grooming, Bathing, etc.</li>
+                    <li>Assistance with Personal: Care Dressing, Transferring, Grooming, Bathing, etc.</li>
                     <li>Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.</li>
                     <li>Free Home Care Assessment</li>
                     <li>Individualized Plan of Care</li>
                     <li>Quality Control Visits</li>
                 </ul>
                 <div className="d-flex justify-content-center">
-                    <button className="button-36" role="button">Learn More</button>
+                    <button className="button-36" role="button">Learn More!</button>
                 </div>
             </div>
-
+            </div>
+                <div>
+                <h1 className="text-center titleText mt-5 mb-5">
+                    Apply at R & R
+                </h1>
+                <div className=" container box-width rCorners2 card-shadow box2 mb-5">
+                    <ul className="card-t-purp dot-none"><li>R & R Home Caregivers is a growing company providing unskilled care for elderly clients in San Antonio and surrounding areas. R & R is dedicated to providing the highest level of care to our senior population. As the company grows we are in constant need of caregivers for multiple shifts. We provide care in the client's home, in independent living communities and memory care facilities.</li></ul>
+                    {/*<h5 className="card-t-purp">Position Requirements</h5>*/}
+                    {/*<ul className="card-t-purp">*/}
+                    {/*    <li>A commitment to providing the absolute best care to our clients</li>*/}
+                    {/*    <li>2 years of caregiving expierence or currently enrolled in CNA or similar training program</li>*/}
+                    {/*</ul>*/}
+                    <div className="d-flex justify-content-center">
+                        <button className="button-36" role="button">Apply Today!</button>
+                    </div>
+                </div>
+                </div>
+            </div>
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
 
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">

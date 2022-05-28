@@ -18,6 +18,14 @@
     width: 25%;
 }
 
+.box-width{
+    width: 40vw;
+}
+
+.dot-none{
+    list-style-type: none;
+}
+
 .image{
     height:30vh;
     width:20vw;
@@ -97,7 +105,7 @@
 }
 
 .button-36:hover {
-    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    box-shadow: rgba(108, 51, 163, 0.8) 0 1px 30px;
     transition-duration: .1s;
 }
 
