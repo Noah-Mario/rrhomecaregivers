@@ -11,6 +11,7 @@ import {
 import HomePage from "./Pages/HomePage";
 
 
+
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
             </Routes>
         </BrowserRouter>
         <Footer/>
+                  
     </>
   );
 }

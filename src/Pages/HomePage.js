@@ -63,27 +63,27 @@ function HomePage(){
                     Our Services
                 </h3>
                 <div className="card-body row d-flex justify-content-around">
-                    <div className="card col-2">
+                    <div className="card col-2 card-shadow">
                     <h5 className="card-title">Assistance with Personal Care</h5>
                     <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>
-                        <a href="#" className="btn btn-primary">Learn More</a>
+                        <button className="button-36" role="button">Button 36</button>
                     </div>
-                    <div className="card col-2">
+                    <div className="card col-2 card-shadow">
                         <h5 className="card-title">Home Management</h5>
                         <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc. (Learn More)</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-2">
+                    <div className="card col-2 card-shadow">
                         <h5 className="card-title">Free Home Care Assessment</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-2">
+                    <div className="card col-2 card-shadow">
                         <h5 className="card-title">Individualized Plan of Care</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-2">
+                    <div className="card col-2 card-shadow">
                         <h5 className="card-title">Quality Control Visits</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
