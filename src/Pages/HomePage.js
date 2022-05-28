@@ -1,30 +1,28 @@
-import Navbar from "../Components/Navbar";
 import "./HomePage.css"
 // import $ from "jquery"
 import Placeholder from "../img/Placeholder.jpeg"
-import Payment from "../img/icons8-payment-64.png"
-import Goal from "../img/icons8-goal-64.png"
-import Mission from "../img/icons8-rocket-48.png"
 
 function HomePage(){
     return(<>
 {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 
         <div className="backgroundColor">
-        <Navbar/>
             <div className="container-fluid ">
                 <div className="container text-center">
                     <h1 className="display-4 my-4">Welcome to R & R Home Caregivers</h1>
                     <h3 className="mb-5">"Where Clients Become Family"</h3>
                 </div>
             </div>
+
 {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
+
 <div className="row d-flex justify-content-center justify-content-around mb-5 ">
     <div className="col-3 card-container">
         <div className="mb-3 d-flex justify-content-center">
-            <img src={Mission} className="img card-img-top" alt="..."/>
+            {/*<img src={Mission} className="img card-img-top" alt="..."/>*/}
+            <span className="material-icons icon-size">&#xeb9b;</span>
         </div>
-            <div className="card card-shadow">
+            <div className="card card-h card-shadow">
                     <div className="card-body">
                         <h5 className="card-title">Our Mission</h5>
                         <p className="card-text">Our mission is to provide compassionate and skillful home care services of superior quality to elderly and disabled persons in their performance of activities of daily living in their own homes.</p>
@@ -34,10 +32,10 @@ function HomePage(){
     </div>
     <div className="col-3 card-container">
         <div className="mb-3 d-flex justify-content-center">
-            <img src={Goal} className="img card-img-top" alt="..."/>
+            <span className="material-icons icon-size">&#xe50a;</span>
         </div>
-            <div className="card card-shadow">
-                <div className="card-body ">
+            <div className="card card-h card-shadow">
+                <div className="card-body">
                     <h5 className="card-title">Our Goal</h5>
                     <p className="card-text">Our Goal is to provide superior home care services allowing our clients to maintain their dignity and quality of life, increase their ability to lead an independent life, and integrate them into the community as much as possible.​</p>
                     {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
@@ -46,9 +44,9 @@ function HomePage(){
     </div>
     <div className="col-3 card-container">
         <div className="mb-3 d-flex justify-content-center">
-            <img src={Payment} className="img card-img-top" alt="..."/>
+            <span className="material-icons icon-size">&#xf041;</span>
         </div>
-            <div className="card card-shadow">
+            <div className="card card-h card-shadow">
                 <div className="card-body">
                     <h5 className="card-title">Payment Methods</h5>
                     <p className="card-text">R & R Home Caregivers accepts several forms of payments.  We accepts Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and Medicaid.</p>
@@ -59,38 +57,40 @@ function HomePage(){
 </div>
 
 {/*----------------------------------------------Our Services Card----------------------------------------------*/}
+
 <div className="row d-flex justify-content-center justify-content-around mb-5 ">
                 <h3 className="text-center">
                     Our Services
                 </h3>
                 <div className="card-body row d-flex justify-content-around">
-                    <div className="card col-3 margin-b">
+                    <div className="card col-2">
                     <h5 className="card-title">Assistance with Personal Care</h5>
                     <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Home Management</h5>
                         <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc. (Learn More)</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Free Home Care Assessment</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Individualized Plan of Care</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Quality Control Visits</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
                 </div>
 </div>
+
 {/*----------------------------------------------Review Carousel----------------------------------------------*/}
 
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
