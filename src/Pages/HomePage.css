@@ -1,19 +1,34 @@
-.backgroundColor{
-    background: linear-gradient(217deg, rgba(153, 0, 255, 0.93), rgba(255,0,0,0) 70.71%),
-    linear-gradient(127deg, rgba(189, 155, 231, 0.98), rgba(0,255,0,0) 70.71%),
-    linear-gradient(336deg, rgba(124, 42, 224, 0.8), rgba(0,0,255,0) 70.71%);;
+.backgroundColor {
+    /*background-color: #5f0a87;*/
+    background-color: #6c33a3;
+    background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%);
+
 }
-.card-h{
-    /*width: 18rem;*/
+
+.backgroundPage{
+    background-color: #6c33a3;
+    background-image: linear-gradient(315deg, #6c33a3 0%, #ececec 74%);
+}
+
+.card-h {
     height: 80%;
 }
 
-.card-title{
-    text-align: center;
+
+.titleText{
+    color:#5f0a87;
+    font-weight: bold;
 }
 
-.card-text{
+.card-title {
     text-align: center;
+    font-weight: bold;
+    color:whitesmoke;
+}
+
+.card-text {
+    text-align: center;
+    color: whitesmoke;
 }
 
 .card-shadow {
@@ -21,40 +36,37 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.container-fluid{
-    width:93.5%;
-}
-
-.margin-b{
+.margin-b {
     margin: 1vh;
 }
 
-.icon-size{
+.icon-size {
     font-size: 96px;
 }
 
 
-
 .button-36 {
-                                                       background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-                                                       border-radius: 8px;
-                                                       border-style: none;
-                                                       box-sizing: border-box;
-                                                       color: #FFFFFF;
-                                                       cursor: pointer;
-                                                       flex-shrink: 0;
-                                                       font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-                                                       font-size: 16px;
-                                                       font-weight: 500;
-                                                       height: 4rem;
-                                                       padding: 0 1.6rem;
-                                                       text-align: center;
-                                                       text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-                                                       transition: all .5s;
-                                                       user-select: none;
-                                                       -webkit-user-select: none;
-                                                       touch-action: manipulation;
-                                                   }
+    background-color: #93E1D8;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 14rem;
+
+}
 
 .button-36:hover {
     box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
