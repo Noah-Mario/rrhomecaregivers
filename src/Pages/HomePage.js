@@ -5,7 +5,6 @@ import Placeholder from "../img/Placeholder.jpeg"
 import Payment from "../img/icons8-payment-64.png"
 import Goal from "../img/icons8-goal-64.png"
 import Mission from "../img/icons8-rocket-48.png"
-import Placeholder from "../img/Placeholder.jpeg"
 
 function HomePage(){
     return(<>
@@ -25,7 +24,7 @@ function HomePage(){
         <div className="mb-3 d-flex justify-content-center">
             <img src={Mission} className="img card-img-top" alt="..."/>
         </div>
-            <div className="card card-shadow">
+            <div className="card card-h card-shadow">
                     <div className="card-body">
                         <h5 className="card-title">Our Mission</h5>
                         <p className="card-text">Our mission is to provide compassionate and skillful home care services of superior quality to elderly and disabled persons in their performance of activities of daily living in their own homes.</p>
@@ -37,7 +36,7 @@ function HomePage(){
         <div className="mb-3 d-flex justify-content-center">
             <img src={Goal} className="img card-img-top" alt="..."/>
         </div>
-            <div className="card card-shadow">
+            <div className="card card-h card-shadow">
                 <div className="card-body ">
                     <h5 className="card-title">Our Goal</h5>
                     <p className="card-text">Our Goal is to provide superior home care services allowing our clients to maintain their dignity and quality of life, increase their ability to lead an independent life, and integrate them into the community as much as possible.​</p>
@@ -49,7 +48,7 @@ function HomePage(){
         <div className="mb-3 d-flex justify-content-center">
             <img src={Payment} className="img card-img-top" alt="..."/>
         </div>
-            <div className="card card-shadow">
+            <div className="card card-h card-shadow">
                 <div className="card-body">
                     <h5 className="card-title">Payment Methods</h5>
                     <p className="card-text">R & R Home Caregivers accepts several forms of payments.  We accepts Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and Medicaid.</p>
@@ -65,27 +64,27 @@ function HomePage(){
                     Our Services
                 </h3>
                 <div className="card-body row d-flex justify-content-around">
-                    <div className="card col-3 margin-b">
+                    <div className="card col-2">
                     <h5 className="card-title">Assistance with Personal Care</h5>
                     <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Home Management</h5>
                         <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc. (Learn More)</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Free Home Care Assessment</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Individualized Plan of Care</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
                     </div>
-                    <div className="card col-3">
+                    <div className="card col-2">
                         <h5 className="card-title">Quality Control Visits</h5>
                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="#" className="btn btn-primary">Learn More</a>
