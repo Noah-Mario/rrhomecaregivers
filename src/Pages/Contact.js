@@ -1,18 +1,15 @@
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import "./Contact.css";
 
 const Contact = () => {
 
     return (
         <>
-            <Navbar/>
             <div className="container-fluid py-5 bg_gradient vh-50">
                 <div className="container">
                     <div className="row flex-direction-column">
                         <div className="col">
                             <h3 className='display-6'>
-                                Contact R & R Home Caregivers
+                                Contact Us
                             </h3>
                         </div>
                         <div className="col ">
@@ -34,25 +31,26 @@ const Contact = () => {
                         <div className="card shadow_box border_none">
                             <div className="card-body">
                                 <div className="form-floating mb-3">
-                                    <input type="email" className="form-control" id="floatingInput"
+                                    <input type="firstName" className="form-control" id="lastName"
                                            placeholder="name@example.com"/>
-                                    <label htmlFor="floatingInput">Email address</label>
+                                    <label htmlFor="firstName">First Name</label>
                                 </div>
                                 <div className="form-floating mb-3">
-                                    <input type="password" className="form-control" id="floatingPassword"
-                                           placeholder="Password"/>
-                                    <label htmlFor="floatingPassword">Password</label>
+                                    <input type="lastName" className="form-control" id="lastName"
+                                           placeholder="Last Name"/>
+                                    <label htmlFor="lastName">Last Name</label>
                                 </div>
                                 <div className="form-floating mb-3">
-                                    <input type="email" className="form-control" id="floatingInput"
+                                    <input type="email" className="form-control" id="email"
                                            placeholder="name@example.com"/>
-                                    <label htmlFor="floatingInput">Email address</label>
+                                    <label htmlFor="email">Email address</label>
                                 </div>
                                 <div className="form-floating mb-3">
                             <textarea className="form-control" placeholder="Leave a comment here"
-                                      id="floatingTextarea" style={{height: '250px', resize: 'none'}}>Message</textarea>
+                                      id="floatingTextarea" style={{height: '250px', resize: 'none'}}/>
                                     <label htmlFor="floatingTextarea">Comments</label>
                                 </div>
+                                <button className='btn btn-primary'>Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -60,13 +58,13 @@ const Contact = () => {
                         <div className="card shadow_box border_none">
                             <div className="card-body">
                                 <img src="http://via.placeholder.com/640x360" className='img-fluid' alt="temp"/>
+                                <br/>
+                                <button className='btn btn-primary'>Get Directions</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <Footer/>
         </>
     );
 }
