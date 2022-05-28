@@ -5,6 +5,8 @@ import Placeholder from "../img/Placeholder.jpeg"
 import Payment from "../img/icons8-payment-64.png"
 import Goal from "../img/icons8-goal-64.png"
 import Mission from "../img/icons8-rocket-48.png"
+import Placeholder from "../img/Placeholder.jpeg"
+
 function HomePage(){
     return(<>
 {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
