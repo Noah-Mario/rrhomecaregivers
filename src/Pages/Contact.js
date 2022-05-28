@@ -50,6 +50,7 @@ const Contact = () => {
                                       id="floatingTextarea" style={{height: '250px', resize: 'none'}}/>
                                     <label htmlFor="floatingTextarea">Comments</label>
                                 </div>
+                                <button className='btn btn-primary'>Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -57,6 +58,8 @@ const Contact = () => {
                         <div className="card shadow_box border_none">
                             <div className="card-body">
                                 <img src="http://via.placeholder.com/640x360" className='img-fluid' alt="temp"/>
+                                <br/>
+                                <button className='btn btn-primary'>Get Directions</button>
                             </div>
                         </div>
                     </div>
