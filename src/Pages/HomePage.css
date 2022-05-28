@@ -39,6 +39,7 @@
 .titleText{
     color:#5f0a87;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
 }
 
 .card-title {
@@ -54,6 +55,7 @@
 
 .card-t-purp{
     color:#5f0a87;
+    font-size: large;
 }
 
 .card-shadow {

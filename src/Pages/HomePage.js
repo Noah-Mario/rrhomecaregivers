@@ -50,53 +50,21 @@ function HomePage() {
             </div>
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
-
-            {/*<div className="row d-flex justify-content-center justify-content-around mb-5 ">*/}
-            {/*    <h1 className="text-center titleText mt-5 mb-5">*/}
-            {/*        Our Services*/}
-            {/*    </h1>*/}
-            {/*    <div className="card-body row d-flex justify-content-around">*/}
-            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
-            {/*            <h5 className="card-title">Assistance with Personal Care</h5>*/}
-            {/*            <p className="card-text">Dressing, Transferring, Grooming, Bathing, etc. (Learn More)</p>*/}
-            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
-            {/*                <button className="button-36" role="button">Learn More</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
-            {/*            <h5 className="card-title">Home Management</h5>*/}
-            {/*            <p className="card-text">Light Housekeeping, Meal Planning, Assistance with Self-Administered*/}
-            {/*                Medications, etc. (Learn More)</p>*/}
-            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
-            {/*                <button className="button-36" role="button">Learn More</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
-            {/*            <h5 className="card-title">Free Home Care Assessment</h5>*/}
-            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
-            {/*                content.</p>*/}
-            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
-            {/*                <button className="button-36" role="button">Learn More</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
-            {/*            <h5 className="card-title">Individualized Plan of Care</h5>*/}
-            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
-            {/*                content.</p>*/}
-            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
-            {/*                <button className="button-36" role="button">Learn More</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="card card-h2 col-2 card-shadow backgroundColor d-flex justify-content-center ">*/}
-            {/*            <h5 className="card-title">Quality Control Visits</h5>*/}
-            {/*            <p className="card-text">With supporting text below as a natural lead-in to additional*/}
-            {/*                content.</p>*/}
-            {/*            <div className="container-fluid d-flex justify-content-center align-self-end">*/}
-            {/*                <button className="button-36" role="button">Learn More</button>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <h1 className="text-center titleText mt-5 mb-5">
+                Our Services
+            </h1>
+            <div className=" container rCorners2 card-shadow box2 mb-5">
+                <ul className="card-t-purp">
+                    <li>Assistance with Personal Care: Dressing, Transferring, Grooming, Bathing, etc.</li>
+                    <li>Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.</li>
+                    <li>Free Home Care Assessment</li>
+                    <li>Individualized Plan of Care</li>
+                    <li>Quality Control Visits</li>
+                </ul>
+                <div className="d-flex justify-content-center">
+                    <button className="button-36" role="button">Learn More</button>
+                </div>
+            </div>
 
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
 
