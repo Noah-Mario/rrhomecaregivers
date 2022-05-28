@@ -1,0 +1,26 @@
+.bg_gradient {
+    background: rgb(98, 0, 255);
+    background: radial-gradient(circle, rgb(136, 0, 255) 0%, rgb(175, 20, 224) 100%);
+}
+.z_index {
+    z-index: 10;
+    position: relative;
+    bottom: 10vh;
+}
+.vh-50 {
+    height: 50vh;
+}
+
+.shadow_box {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.border_none {
+    border: none;
+}
+
+@media screen and (max-width: 768px){
+    .vh-50 {
+        height: unset;
+    }
+}
