@@ -5,6 +5,29 @@ import Mission from "../img/rrmission.jpg"
 import Goal from "../img/rrImage3.jpg"
 
 function HomePage() {
+
+    //     window.fbAsyncInit = function() {
+    //     FB.init({
+    //         appId      : '{your-app-id}',
+    //         cookie     : true,
+    //         xfbml      : true,
+    //         version    : '{api-version}'
+    //     });
+    //
+    //     FB.AppEvents.logPageView();
+    //
+    // };
+    //
+    //     (function(d, s, id){
+    //     var js, fjs = d.getElementsByTagName(s)[0];
+    //     if (d.getElementById(id)) {return;}
+    //     js = d.createElement(s); js.id = id;
+    //     js.src = "https://connect.facebook.net/en_US/sdk.js";
+    //     fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
+    // fetch(`https://graph.facebook.com/USER-ID/accounts?fields=name,access_token&access_token=${process.env.REACT_APP_WEATHER_API_KEY}`).then(response => response.json())
+    //     .then(data => console.log(data))
+
     return (<>
         {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 

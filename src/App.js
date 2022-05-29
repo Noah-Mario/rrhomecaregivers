@@ -3,6 +3,7 @@ import "bootstrap"
 import Contact from "./Pages/Contact";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+
 import {
     BrowserRouter,
     Routes, // instead of "Switch"
