@@ -10,6 +10,11 @@
     background-image: linear-gradient(115deg, #6c33a3 0%, #ececec 20%);
 }
 
+.backgroundAboutPage{
+    background-color: #6c33a3;
+    background-image: linear-gradient(280deg, #6c33a3 0%, #ececec 20%);
+}
+
 .card-h {
     height: 80%;
 }

@@ -39,71 +39,86 @@ function HomePage() {
 
             {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
             <div className="d-flex justify-content-around">
-            <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
-                <h1 className="text-center titleText">Our Mission</h1>
+                <div
+                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                    <h1 className="text-center titleText">Our Mission</h1>
                     <img src={Mission} className="image"/>
-                    <p className="text-center card-t-purp">Our mission is to provide compassionate and skillful home care
+                    <p className="text-center card-t-purp">Our mission is to provide compassionate and skillful home
+                        care
                         services of superior quality to elderly and disabled persons in their performance of
                         activities of daily living in their own homes.</p>
                     {/*<a href="#" className="btn btn-primary">Button</a>*/}
-            </div>
+                </div>
 
 
-                <div className="d-flex justify-content-center container-fluid rCorners2 card-shadow card-w box2 row mb-5">
+                <div
+                    className="d-flex justify-content-center container-fluid rCorners2 card-shadow card-w box2 row mb-5">
                     <h1 className="text-center titleText">Our Goal</h1>
                     <img src={Goal} className="image"/>
-                    <p className="text-center card-t-purp">Our Goal is to provide superior home care services allowing our
+                    <p className="text-center card-t-purp">Our Goal is to provide superior home care services allowing
+                        our
                         clients to maintain their dignity and quality of life, increase their ability to lead an
                         independent life, and integrate them into the community as much as possible.</p>
                     {/*<a href="#" className="btn btn-primary">Button</a>*/}
                 </div>
 
 
-                <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                <div
+                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
                     {/*<img src={Mission} className="image col-4"/>*/}
                     <h1 className="text-center titleText">Payment Methods</h1>
                     <span className="material-icons icon-size text-center">&#xf041;</span>
-                        <p className="text-center card-t-purp">R & R Home Caregivers accepts several forms of payments. We accepts
-                            Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and
-                            Medicaid.</p>
+                    <p className="text-center card-t-purp">R & R Home Caregivers accepts several forms of payments. We
+                        accepts
+                        Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and
+                        Medicaid.</p>
                     {/*<a href="#" className="btn btn-primary">Button</a>*/}
                 </div>
             </div>
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
             <div className="d-flex justify-content-around">
-            <div>
-                <h1 className="text-center titleText mt-5 mb-5">
-                    Our Services
-                </h1>
-            <div className=" container box-width rCorners2 card-shadow box2 mb-5">
-                <ul className="card-t-purp">
-                    <li>Assistance with Personal: Care Dressing, Transferring, Grooming, Bathing, etc.</li>
-                    <li>Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.</li>
-                    <li>Free Home Care Assessment</li>
-                    <li>Individualized Plan of Care</li>
-                    <li>Quality Control Visits</li>
-                </ul>
-                <div className="d-flex justify-content-center">
-                    <button className="button-36" role="button">Learn More!</button>
-                </div>
-            </div>
-            </div>
                 <div>
-                <h1 className="text-center titleText mt-5 mb-5">
-                    Apply at R & R
-                </h1>
-                <div className=" container box-width rCorners2 card-shadow box2 mb-5">
-                    <ul className="card-t-purp dot-none"><li>R & R Home Caregivers is a growing company providing unskilled care for elderly clients in San Antonio and surrounding areas. R & R is dedicated to providing the highest level of care to our senior population. As the company grows we are in constant need of caregivers for multiple shifts. We provide care in the client's home, in independent living communities and memory care facilities.</li></ul>
-                    {/*<h5 className="card-t-purp">Position Requirements</h5>*/}
-                    {/*<ul className="card-t-purp">*/}
-                    {/*    <li>A commitment to providing the absolute best care to our clients</li>*/}
-                    {/*    <li>2 years of caregiving expierence or currently enrolled in CNA or similar training program</li>*/}
-                    {/*</ul>*/}
-                    <div className="d-flex justify-content-center">
-                        <button className="button-36" role="button">Apply Today!</button>
+                    <h1 className="text-center titleText mt-5 mb-5">
+                        Our Services
+                    </h1>
+                    <div className=" container box-width rCorners2 card-shadow box2 mb-5">
+                        <ul className="card-t-purp">
+                            <li>Assistance with Personal: Care Dressing, Transferring, Grooming, Bathing, etc.</li>
+                            <li>Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered
+                                Medications, etc.
+                            </li>
+                            <li>Free Home Care Assessment</li>
+                            <li>Individualized Plan of Care</li>
+                            <li>Quality Control Visits</li>
+                        </ul>
+                        <div className="d-flex justify-content-center">
+                            <button className="button-36" role="button">Learn More!</button>
+                        </div>
                     </div>
                 </div>
+                <div>
+                    <h1 className="text-center titleText mt-5 mb-5">
+                        Apply at R & R
+                    </h1>
+                    <div className=" container box-width rCorners2 card-shadow box2 mb-5">
+                        <ul className="card-t-purp dot-none">
+                            <li>R & R Home Caregivers is a growing company providing unskilled care for elderly clients
+                                in San Antonio and surrounding areas. R & R is dedicated to providing the highest level
+                                of care to our senior population. As the company grows we are in constant need of
+                                caregivers for multiple shifts. We provide care in the client's home, in independent
+                                living communities and memory care facilities.
+                            </li>
+                        </ul>
+                        {/*<h5 className="card-t-purp">Position Requirements</h5>*/}
+                        {/*<ul className="card-t-purp">*/}
+                        {/*    <li>A commitment to providing the absolute best care to our clients</li>*/}
+                        {/*    <li>2 years of caregiving expierence or currently enrolled in CNA or similar training program</li>*/}
+                        {/*</ul>*/}
+                        <div className="d-flex justify-content-center">
+                            <button className="button-36" role="button">Apply Today!</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
