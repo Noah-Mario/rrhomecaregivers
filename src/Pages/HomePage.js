@@ -32,6 +32,7 @@ function HomePage() {
         {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 
         <div className="backgroundPage">
+            <div className="mb-3 dis">div</div>
             <div className="container text-center">
                 <h1 className="display-4 titleText">Welcome to R & R Home Caregivers</h1>
                 <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
