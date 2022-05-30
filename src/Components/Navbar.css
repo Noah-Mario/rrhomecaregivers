@@ -1,9 +1,16 @@
 .nav-item{
     color:#5f0a87;
     font-weight: bold;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 5px;
 }
 
 .nav-item:hover{
     color:#5f0a87;
+}
+
+.logo{
+    width: 7vw;
+    height: 10vh;
+    margin-left: 5px;
 }
