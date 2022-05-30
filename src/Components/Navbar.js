@@ -1,4 +1,5 @@
 import Logo from "../img/img.png";
+import "./Navbar.css"
 
 const Navbar = () => {
     return (<>
@@ -16,7 +17,7 @@ const Navbar = () => {
                     <a href="/"><img src={Logo} alt="logo"/></a>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <a className="nav-link" aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Services</a>
@@ -25,7 +26,7 @@ const Navbar = () => {
                             <a href="#" className="nav-link">Why R&R</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">About</a>
+                            <a href="/about" className="nav-link">About</a>
                         </li>
                         <li className="nav-item">
                             <a href="/contact" className="nav-link">Contact</a>
