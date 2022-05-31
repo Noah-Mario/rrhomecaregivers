@@ -3,6 +3,7 @@ import "bootstrap"
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import WhyRR from "./Pages/WhyR&R";
+import Services from "./Pages/Services";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/whyRR" element={<WhyRR/>}/>
+                <Route path="/services" element={<Services/>}/>
             </Routes>
         </BrowserRouter>
         <Footer/>
