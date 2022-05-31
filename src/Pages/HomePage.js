@@ -6,33 +6,38 @@ import Goal from "../img/rrImage3.jpg"
 
 function HomePage() {
 
-    //     window.fbAsyncInit = function() {
-    //     FB.init({
-    //         appId      : '{your-app-id}',
-    //         cookie     : true,
-    //         xfbml      : true,
-    //         version    : '{api-version}'
-    //     });
-    //
-    //     FB.AppEvents.logPageView();
-    //
-    // };
-    //
-    //     (function(d, s, id){
-    //     var js, fjs = d.getElementsByTagName(s)[0];
-    //     if (d.getElementById(id)) {return;}
-    //     js = d.createElement(s); js.id = id;
-    //     js.src = "https://connect.facebook.net/en_US/sdk.js";
-    //     fjs.parentNode.insertBefore(js, fjs);
-    // }(document, 'script', 'facebook-jssdk'));
     // fetch(`https://graph.facebook.com/USER-ID/accounts?fields=name,access_token&access_token=${process.env.REACT_APP_WEATHER_API_KEY}`).then(response => response.json())
     //     .then(data => console.log(data))
 
+    function slideFunction() {
+        let slide = document.querySelectorAll(".animateUp");
+        for (let i = 0; i < slide.length; i++) {
+            setTimeout(() => {
+                slide[i].classList.remove("hide");
+                slide[i].classList.add("animate__fadeInUp");
+            }, 150)
+        }
+    }
+
+    function revealCards() {
+        let slideScroll = document.querySelectorAll(".scrollUp");
+        for (let i = 0; i < slideScroll.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = slideScroll[i].getBoundingClientRect().top;
+            let elementVisible = 50;
+            if (elementTop < windowHeight - elementVisible) {
+                slideScroll[i].classList.add("animate__fadeInUp");
+                slideScroll[i].classList.remove("hide");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", revealCards);
     return (<>
         {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 
         <div className="backgroundPage">
-            <div className="mb-3 dis">div</div>
+            <div className="mb-3 hide">div</div>
             <div className="container text-center">
                 <h1 className="display-4 titleText">Welcome to R & R Home Caregivers</h1>
                 <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
@@ -40,8 +45,7 @@ function HomePage() {
 
             {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
             <div className="d-flex justify-content-around">
-                <div
-                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                <div onLoad={slideFunction} className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center animateUp hide">
                     <h1 className="text-center titleText">Our Mission</h1>
                     <img src={Mission} className="image"/>
                     <p className="text-center card-t-purp">Our mission is to provide compassionate and skillful home
@@ -52,8 +56,7 @@ function HomePage() {
                 </div>
 
 
-                <div
-                    className="d-flex justify-content-center container-fluid rCorners2 card-shadow card-w box2 row mb-5">
+                <div className="d-flex justify-content-center container-fluid rCorners2 card-shadow card-w box2 row mb-5 animateUp hide">
                     <h1 className="text-center titleText">Our Goal</h1>
                     <img src={Goal} className="image"/>
                     <p className="text-center card-t-purp">Our Goal is to provide superior home care services allowing
@@ -64,8 +67,7 @@ function HomePage() {
                 </div>
 
 
-                <div
-                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center animateUp hide">
                     {/*<img src={Mission} className="image col-4"/>*/}
                     <h1 className="text-center titleText">Payment Methods</h1>
                     <span className="material-icons icon-size text-center">&#xf041;</span>
@@ -78,12 +80,12 @@ function HomePage() {
             </div>
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-around scrollUp hide">
                 <div>
-                    <h1 className="text-center titleText mt-5 mb-5">
+                    <h1 className="text-center titleText mt-5 mb-5 ">
                         Our Services
                     </h1>
-                    <div className=" container box-width rCorners2 card-shadow box2 mb-5">
+                    <div className=" container box-width rCorners2 card-shadow box2 mb-5 ">
                         <ul className="card-t-purp">
                             <li>Assistance with Personal: Care Dressing, Transferring, Grooming, Bathing, etc.</li>
                             <li>Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered
@@ -99,10 +101,10 @@ function HomePage() {
                     </div>
                 </div>
                 <div>
-                    <h1 className="text-center titleText mt-5 mb-5">
+                    <h1 className="text-center titleText mt-5 mb-5 ">
                         Apply at R & R
                     </h1>
-                    <div className=" container box-width rCorners2 card-shadow box2 mb-5">
+                    <div className=" container box-width rCorners2 card-shadow box2 mb-5 ">
                         <ul className="card-t-purp dot-none">
                             <li>R & R Home Caregivers is a growing company providing unskilled care for elderly clients
                                 in San Antonio and surrounding areas. R & R is dedicated to providing the highest level
@@ -172,6 +174,7 @@ function HomePage() {
         </div>
 
     </>)
+
 }
 
 export default HomePage;
