@@ -1,5 +1,5 @@
-import Image1 from "../img/rrImage1.jpg";
-import Image2 from "../img/rrImage2.jpg";
+import Image5 from "../img/rrimage5.jpeg";
+import Image6 from "../img/rrimage6.jpeg";
 
 function Services(){
 
@@ -21,11 +21,11 @@ function Services(){
                     </div>
                 </div>
                 <div className="col-3 mt-5">
-                    <div className="container-fluid rCorners2 card-shadow box2 mb-3 d-flex justify-content-center">
-                        <img src={Image1} className="aboutImg"/>
-                    </div>
                     <div className="container-fluid rCorners2 card-shadow box2 mb-5 d-flex justify-content-center">
-                        <img src={Image2} className="aboutImg"/>
+                        <img src={Image6} className="aboutImg"/>
+                    </div>
+                    <div className="container-fluid rCorners2 card-shadow box2 mb-3 d-flex justify-content-center">
+                        <img src={Image5} className="imgSize"/>
                     </div>
                 </div>
                 <div className="col-4 mt-5 ms-3">

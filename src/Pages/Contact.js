@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <>
             <div className=" backgroundPage">
-                <div className="mb-3 dis">div</div>
+                <div className="mb-3 hide">div</div>
                 <div className="d-flex justify-content-around">
                     <div className="col-6">
                         <div className="d-flex justify-content-center">
