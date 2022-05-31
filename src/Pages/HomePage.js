@@ -15,7 +15,7 @@ function HomePage() {
             setTimeout(() => {
                 slide[i].classList.remove("hide");
                 slide[i].classList.add("animate__fadeInUp");
-            }, 150)
+            }, 100)
         }
     }
 
