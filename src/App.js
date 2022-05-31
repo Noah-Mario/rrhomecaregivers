@@ -2,6 +2,7 @@ import './App.css';
 import "bootstrap"
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import WhyRR from "./Pages/WhyR&R";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/about" element={<About/>}/>
+                <Route path="/whyRR" element={<WhyRR/>}/>
             </Routes>
         </BrowserRouter>
         <Footer/>

@@ -17,7 +17,7 @@ const Navbar = () => {
                     <a href="/"><img className="logo" src={Logo} alt="logo"/></a>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a href="#" className="nav-link">Why R&R</a>
+                            <a href="/whyRR" className="nav-link">Why R&R</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Services</a>
