@@ -8,6 +8,9 @@ function HomePage() {
 
     // fetch(`https://graph.facebook.com/USER-ID/accounts?fields=name,access_token&access_token=${process.env.REACT_APP_WEATHER_API_KEY}`).then(response => response.json())
     //     .then(data => console.log(data))
+    const timelineSize = {
+        width: "500px"
+    };
 
     function slideFunction() {
         let slide = document.querySelectorAll(".animateUp");
@@ -125,57 +128,14 @@ function HomePage() {
                 </div>
             </div>
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
+            <div className="container d-flex justify-content-center">
             <div className="fb-page" data-href="https://www.facebook.com/rrcaregivers/" data-tabs="timeline"
-                 data-width="" data-height="" data-small-header="false" data-adapt-container-width="true"
+                 data-width="1000" data-height="" data-small-header="false" data-adapt-container-width="true"
                  data-hide-cover="false" data-show-facepile="true">
                 <blockquote cite="https://www.facebook.com/rrcaregivers/" className="fb-xfbml-parse-ignore"><a
                     href="https://www.facebook.com/rrcaregivers/">R &amp; R Home Caregivers</a></blockquote>
             </div>
-            {/*<div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">*/}
-            {/*    <div className="carousel-indicators">*/}
-            {/*        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"*/}
-            {/*                className="active"*/}
-            {/*                aria-current="true" aria-label="Slide 1"></button>*/}
-            {/*        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"*/}
-            {/*                aria-label="Slide 2"></button>*/}
-            {/*        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"*/}
-            {/*                aria-label="Slide 3"></button>*/}
-            {/*    </div>*/}
-            {/*    <div className="carousel-inner">*/}
-            {/*        <div className="carousel-item active d-flex justify-content-center">*/}
-            {/*            <img src={Placeholder} className="img-fluid" alt="..."/>*/}
-            {/*            <div className="carousel-caption d-none d-md-block">*/}
-            {/*                <h5>First slide label</h5>*/}
-            {/*                <p>Some representative placeholder content for the first slide.</p>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="carousel-item d-flex justify-content-center">*/}
-            {/*            <img src={Placeholder} className="img-fluid" alt="..."/>*/}
-            {/*            <div className="carousel-caption d-none d-md-block">*/}
-            {/*                <h5>Second slide label</h5>*/}
-            {/*                <p>Some representative placeholder content for the second slide.</p>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="carousel-item d-flex justify-content-center">*/}
-            {/*            <img src={Placeholder} className="img-fluid" alt="..."/>*/}
-            {/*            <div className="carousel-caption d-none d-md-block">*/}
-            {/*                <h5>Third slide label</h5>*/}
-            {/*                <p>Some representative placeholder content for the third slide.</p>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"*/}
-            {/*            data-bs-slide="prev">*/}
-            {/*        <span className="carousel-control-prev-icon" aria-hidden="true"></span>*/}
-            {/*        <span className="visually-hidden">Previous</span>*/}
-            {/*    </button>*/}
-            {/*    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"*/}
-            {/*            data-bs-slide="next">*/}
-            {/*        <span className="carousel-control-next-icon" aria-hidden="true"></span>*/}
-            {/*        <span className="visually-hidden">Next</span>*/}
-            {/*    </button>*/}
-            {/*</div>*/}
-
+            </div>
         </div>
 
     </>)
