@@ -156,3 +156,7 @@
     animation-name: fadeInUp;
     animation-duration: 2s;
 }
+
+.timelineSize{
+    width:400px;
+}
