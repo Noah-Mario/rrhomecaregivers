@@ -6,6 +6,7 @@ import Goal from "../img/rrImage3.jpg"
 
 function HomePage() {
 
+
     // fetch(`https://graph.facebook.com/USER-ID/accounts?fields=name,access_token&access_token=${process.env.REACT_APP_WEATHER_API_KEY}`).then(response => response.json())
     //     .then(data => console.log(data))
 
