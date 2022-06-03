@@ -9,6 +9,16 @@
 /*    color:#5f0a87;*/
 /*}*/
 
+.navbar-nav > .nav-item > .nav-link{
+    color: #5f0a87;
+}
+
+.navbar-nav > .nav-item > .nav-link:hover{
+    color: #5f0a87;
+    background-color: #cba6f1;
+}
+
+
 .logo{
     width: 7vw;
     height: 10vh;
