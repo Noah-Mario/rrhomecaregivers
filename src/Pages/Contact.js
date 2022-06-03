@@ -16,7 +16,7 @@ const Contact = () => {
                         <div className="container box-width rCorners2 card-shadow box2 mb-5">
                             <div className="card-body">
                                 <div className="form-floating mb-3">
-                                    <input type="firstName" className="form-control" id="lastName"
+                                    <input type="firstName" className="form-control" id="firstName"
                                            placeholder="name@example.com"/>
                                     <label htmlFor="firstName">First Name</label>
                                 </div>

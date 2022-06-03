@@ -136,6 +136,7 @@ function HomePage() {
                     href="https://www.facebook.com/rrcaregivers/">R &amp; R Home Caregivers</a></blockquote>
             </div>
             </div>
+            <div className="mt-2 hide">div</div>
         </div>
 
     </>)
