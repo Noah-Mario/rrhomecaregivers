@@ -130,12 +130,13 @@ function HomePage() {
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
             <div className="container d-flex justify-content-center">
             <div className="fb-page" data-href="https://www.facebook.com/rrcaregivers/" data-tabs="timeline"
-                 data-width="1000" data-height="" data-small-header="false" data-adapt-container-width="true"
+                 data-width="2000" data-height="" data-small-header="false" data-adapt-container-width="false"
                  data-hide-cover="false" data-show-facepile="true">
                 <blockquote cite="https://www.facebook.com/rrcaregivers/" className="fb-xfbml-parse-ignore"><a
                     href="https://www.facebook.com/rrcaregivers/">R &amp; R Home Caregivers</a></blockquote>
             </div>
             </div>
+            <div className="mt-2 hide">div</div>
         </div>
 
     </>)
