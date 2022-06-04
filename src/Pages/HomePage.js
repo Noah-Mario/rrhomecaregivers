@@ -116,11 +116,6 @@ function HomePage() {
                                 living communities and memory care facilities.
                             </li>
                         </ul>
-                        {/*<h5 className="card-t-purp">Position Requirements</h5>*/}
-                        {/*<ul className="card-t-purp">*/}
-                        {/*    <li>A commitment to providing the absolute best care to our clients</li>*/}
-                        {/*    <li>2 years of caregiving expierence or currently enrolled in CNA or similar training program</li>*/}
-                        {/*</ul>*/}
                         <div className="d-flex justify-content-center">
                             <button className="button-36" role="button">Apply Today!</button>
                         </div>
@@ -128,7 +123,11 @@ function HomePage() {
                 </div>
             </div>
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
+            <h1 className="text-center titleText mt-5 mb-5 ">
+                R & R's Facebook Timeline
+            </h1>
             <div className="container d-flex justify-content-center">
+
             <div className="fb-page" data-href="https://www.facebook.com/rrcaregivers/" data-tabs="timeline"
                  data-width="2000" data-height="" data-small-header="false" data-adapt-container-width="false"
                  data-hide-cover="false" data-show-facepile="true">
