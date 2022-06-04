@@ -1,8 +1,33 @@
 import "./Contact.css";
-// import sampleForm from "../Forms/SampleForm.pdf"
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+import {MAP_BOX_API} from "../Utils/Config";
+import {useEffect, useRef, useState} from "react";
 
 function Contact() {
+    mapboxgl.accessToken = MAP_BOX_API;
+    const mapContainer = useRef(null);
+    const map = useRef(null);
+    const [lng, setLng] = useState(-98.602100);
+    const [lat, setLat] = useState(29.515450);
+    const [zoom, setZoom] = useState(13);
+    // Set marker options.
+    const marker = new mapboxgl.Marker({
+        color: "#FFFFFF",
+        draggable: true
+    }).setLngLat([30.5, 50.5])
+        .addTo(map);
 
+
+    useEffect(() => {
+        if (map.current) return; // initialize map only once
+        map.current = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [lng, lat],
+            zoom: zoom,
+        });
+    });
     return (
         <>
             <div className=" backgroundPage">
@@ -56,7 +81,10 @@ function Contact() {
                                 </ul>
                             </div>
                             <div className="card-body">
+{/*
                                 <img src="http://via.placeholder.com/640x360" className='img-fluid' alt="temp"/>
+*/}
+                                <div ref={mapContainer} className="map-container" />
                                 <div className="mt-2">
                                     <button className="button-36" role="button">Get Directions</button>
                                 </div>
