@@ -46,7 +46,7 @@ a{
     color:black;
     font-weight: bold;
     font-family: 'Lobster', cursive;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 a:hover{
@@ -55,8 +55,8 @@ a:hover{
 }
 
 .footerImage{
-    height:20vh;
-    width:14vw;
+    height:15vh;
+    width:10vw;
     border-radius: 7%;
 }
 .footerMapImage{
@@ -130,7 +130,7 @@ a:hover{
 }
 
 .icon-size-sm {
-    font-size: 46px;
+    font-size: 30px;
     color: #41095e;
     position: relative;
     top: 15px;

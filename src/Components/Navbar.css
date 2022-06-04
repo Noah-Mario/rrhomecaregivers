@@ -16,6 +16,17 @@
 .navbar-nav > .nav-item > .nav-link:hover{
     color: #5f0a87;
     background-color: #cba6f1;
+    border-radius: 15%;
+}
+
+.nav-link{
+    color: #5f0a87;
+}
+
+.nav-link:hover{
+    color: #5f0a87;
+    background-color: #cba6f1;
+    border-radius: 15%;
 }
 
 
