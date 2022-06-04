@@ -105,15 +105,11 @@ function HomePage() {
                 </div>
                 <div>
                     <h1 className="text-center titleText mt-5 mb-5 ">
-                        Apply at R & R
+                        Testimonials
                     </h1>
                     <div className=" container box-width rCorners2 card-shadow box2 mb-5 ">
                         <ul className="card-t-purp dot-none">
-                            <li>R & R Home Caregivers is a growing company providing unskilled care for elderly clients
-                                in San Antonio and surrounding areas. R & R is dedicated to providing the highest level
-                                of care to our senior population. As the company grows we are in constant need of
-                                caregivers for multiple shifts. We provide care in the client's home, in independent
-                                living communities and memory care facilities.
+                            <li>Check out the what people have to say about R & R Home Caregivers!
                             </li>
                         </ul>
                         <div className="d-flex justify-content-center">
