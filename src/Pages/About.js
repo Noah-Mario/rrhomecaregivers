@@ -1,6 +1,7 @@
 import "./About.css"
 import AboutImg from "../img/rrAboutImage.jpg";
 
+
 function About() {
 
 

@@ -24,3 +24,10 @@
         height: unset;
     }
 }
+
+/*mapbox*/
+.map-container {
+    height: 400px;
+}
+
+
