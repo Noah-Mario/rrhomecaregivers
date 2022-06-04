@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .navbar-light .navbar-nav .nav-link {
     color: #5f0a87;
@@ -6,7 +7,28 @@
 }
 .navbar-light .navbar-nav .nav-link:hover {
     color: #9659b2;
+=======
+/*.nav-item{*/
+/*    color:#5f0a87;*/
+/*    font-weight: bold;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*.nav-item:hover{*/
+/*    color:#5f0a87;*/
+/*}*/
+
+.navbar-nav > .nav-item > .nav-link{
+    color: #5f0a87;
 }
+
+.navbar-nav > .nav-item > .nav-link:hover{
+    color: #5f0a87;
+    background-color: #cba6f1;
+>>>>>>> 8695a03e3d9a5c545a1606c6f14680a4d6004981
+}
+
 
 .logo{
     width: 7vw;

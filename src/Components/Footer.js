@@ -1,61 +1,33 @@
+import Logo from "../img/LogoTransparent.png";
+
 const Footer = () => {
     return(
         <>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col">
-                        <div className="card " aria-hidden="true">
-                            <img src="..." className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title placeholder-glow">
-                                        <span className="placeholder col-6"></span>
-                                    </h5>
-                                    <p className="card-text placeholder-glow">
-                                        <span className="placeholder col-7"></span>
-                                        <span className="placeholder col-4"></span>
-                                        <span className="placeholder col-4"></span>
-                                        <span className="placeholder col-6"></span>
-                                        <span className="placeholder col-8"></span>
-                                    </p>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card" aria-hidden="true">
-                            <img src="..." className="card-img-top" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title placeholder-glow">
-                                    <span className="placeholder col-6"></span>
-                                </h5>
-                                <p className="card-text placeholder-glow">
-                                    <span className="placeholder col-7"></span>
-                                    <span className="placeholder col-4"></span>
-                                    <span className="placeholder col-4"></span>
-                                    <span className="placeholder col-6"></span>
-                                    <span className="placeholder col-8"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card" aria-hidden="true">
-                            <img src="..." className="card-img-top" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title placeholder-glow">
-                                    <span className="placeholder col-6"></span>
-                                </h5>
-                                <p className="card-text placeholder-glow">
-                                    <span className="placeholder col-7"></span>
-                                    <span className="placeholder col-4"></span>
-                                    <span className="placeholder col-4"></span>
-                                    <span className="placeholder col-6"></span>
-                                    <span className="placeholder col-8"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+            <div className="footerColor row d-flex justify-content-center">
+                <div className="col-3 mt-4">
+                    <a href="/"><img className="footerImage ms-5" src={Logo} alt="logo"/></a>
                 </div>
-            </div>
+                    <div className="col-3 mt-4">
+                    <div className=""><span className="material-icons icon-size-sm text-center">&#xe0b0;</span>
+                        <a className="aText" href="tel:210-236-8955">Call: (210) 236-8955</a>
+                    </div>
+
+                    <div className=""><span className="material-icons icon-size-sm text-center">&#xead8;</span>
+                        <a className="aText" href="tel:888-978-5038">Fax: (888) 978-5038</a>
+                    </div>
+
+                    <div className=""><span className="material-icons icon-size-sm text-center">&#xe158;</span>
+                        <a className="aText" href="mailto:info@rrcaregivers.com">Email: info@rrcaregivers.com</a></div>
+                    </div>
+                <div className=" col-6">
+                    <img src="http://via.placeholder.com/640x360" className='footerMapImage mt-2 mb-2' alt="temp"/>
+                    {/*<div className="d-flex justify-content-center">*/}
+                    {/*<button className="button-36 mt-1" role="button" >Get Directions</button>*/}
+                    {/*</div>*/}
+                </div>
+
+
+                </div>
         </>
     );
 }
