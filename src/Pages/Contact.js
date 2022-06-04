@@ -1,6 +1,7 @@
 import "./Contact.css";
+// import sampleForm from "../Forms/SampleForm.pdf"
 
-const Contact = () => {
+function Contact() {
 
     return (
         <>
