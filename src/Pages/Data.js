@@ -23,20 +23,10 @@ export const whyUs = {
     motto: 'THE COMMITMENT WE MAKE TO YOU TODAY IS THE SAME COMMITMENT WE WILL MAKE TOMORROW, NEXT MONTH, NEXT YEAR.'
 }
 
-export const services = {
-    title: 'services',
-    content: 'Assistance with Personal: Care Dressing, Transferring, Grooming, Bathing, etc.\n' +
-        'Home Management: Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.\n' +
-        'Free Home Care Assessment\n' +
-        'Individualized Plan of Care\n' +
-        'Quality Control Visits'
-}
-
 export const personal = {
     title: 'Assistance with Personal',
     content: 'Care Dressing, Transferring, Grooming, Bathing, etc.'
 }
-
 export const homeManagement = {
     title: 'Home Management',
     content: 'Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.',
@@ -48,5 +38,5 @@ export const carePlan = {
     title: 'Individualized Plan of Care',
 }
 export const QA = {
-    title: ''
+    title: 'Quality Control visits',
 }
