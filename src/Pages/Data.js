@@ -1,14 +1,24 @@
+import Mission from "../img/rrmission.jpg"
+import Goal from "../img/rrImage3.jpg"
+
 export const mission = {
+    def: true,
     title: 'Our Mission',
-    content: 'Our mission is to provide compassionate and skillful home care services of superior quality to elderly and disabled persons in their performance of activities of daily living in their own homes.'
+    content: 'Our mission is to provide compassionate and skillful home care services of superior quality to elderly and disabled persons in their performance of activities of daily living in their own homes.',
+    image: Mission,
+    imgDesc: 'Mission'
 }
 
 export const goal = {
+    def: false,
     title: 'Our Goal',
-    content: 'Our Goal is to provide superior home care services allowing our clients to maintain their dignity and quality of life, increase their ability to lead an independent life, and integrate them into the community as much as possible.'
+    content: 'Our Goal is to provide superior home care services allowing our clients to maintain their dignity and quality of life, increase their ability to lead an independent life, and integrate them into the community as much as possible.',
+    image: Goal,
+    imgDesc: 'Goal'
 }
 
 export const payment = {
+    def: true,
     title: 'Payment Methods',
     content: 'R & R Home Caregivers accepts several forms of payments. We accepts Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and Medicaid.'
 }

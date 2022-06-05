@@ -2,8 +2,15 @@ import "./HomePage.css"
 
 import Mission from "../img/rrmission.jpg"
 import Goal from "../img/rrImage3.jpg"
+import Hero from "../Components/Hero";
+import {goal, mission, whyUs} from "./Data";
 
 function HomePage() {
+    const couraselImg = {
+        height: '40vh',
+        width: '40vh',
+        borderRadius: '5%'
+    }
 
     const timelineSize = {
         width: "500px"
@@ -36,15 +43,38 @@ function HomePage() {
     return (<>
         {/*-----------------------------------------------Jumbotron-------------------------------------------------*/}
 
-        <div className="backgroundPage">
-            <div className="mb-3 hide">div</div>
-            <div className="container text-center">
-                <h1 className="display-4 titleText">Welcome to R & R Home Caregivers</h1>
-                <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
+        <div className="container py-5">
+            <div className="row py-3">
+                <div className="col-8">
+                    <div className="container text-center">
+                        <h1 className="display-4 titleText mb-3">Welcome to R & R Home Caregivers</h1>
+                        <h3 className="mb-5 titleText">"Where Clients Become Family"</h3>
+                    </div>
+                </div>
+                <div className="col-4">
+                    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <img src={Mission} className="d-block w-100" alt="..." style={couraselImg}/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src={Goal} className="d-block w-100" alt="..." style={couraselImg}/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src={Mission} className="d-block w-100" alt="..." style={couraselImg}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+
+        <div className="backgroundPage">
+
 
             {/*----------------------------------------------First 3 Cards----------------------------------------------*/}
-            <div className="d-flex justify-content-around">
+{/*            <div className="d-flex justify-content-around">
                 <div onLoad={slideFunction} className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center animateUp hide">
                     <h1 className="text-center titleText">Our Mission</h1>
                     <img src={Mission} className="image"/>
@@ -52,7 +82,7 @@ function HomePage() {
                         care
                         services of superior quality to elderly and disabled persons in their performance of
                         activities of daily living in their own homes.</p>
-                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
+                    <a href="#" className="btn btn-primary">Button</a>
                 </div>
 
 
@@ -63,23 +93,41 @@ function HomePage() {
                         our
                         clients to maintain their dignity and quality of life, increase their ability to lead an
                         independent life, and integrate them into the community as much as possible.</p>
-                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
+                    <a href="#" className="btn btn-primary">Button</a>
                 </div>
 
 
                 <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center animateUp hide">
-                    {/*<img src={Mission} className="image col-4"/>*/}
+                    <img src={Mission} className="image col-4"/>
                     <h1 className="text-center titleText">Payment Methods</h1>
                     <span className="material-icons icon-size text-center">&#xf041;</span>
                     <p className="text-center card-t-purp">R & R Home Caregivers accepts several forms of payments. We
                         accepts
                         Long-Term Care Insurance, VA Aid & Attendance, Private Insurance, private payment and
                         Medicaid.</p>
-                    {/*<a href="#" className="btn btn-primary">Button</a>*/}
+                    <a href="#" className="btn btn-primary">Button</a>
+                </div>
+            </div>*/}
+            {/*passing in information from data.js into hero component*/}
+            <Hero {...mission}/>
+            <Hero {...goal}/>
+
+            {/*why us part --------------------------------*/}
+            <div className="container">
+                <div className="row">
+                    <h4 className='text-center mb-4'>{whyUs.title}</h4>
+                    <div className="col">
+                        <p>{whyUs.leftCol}</p>
+                    </div>
+                    <div className="col">
+                        <p>{whyUs.rightCol}</p>
+                    </div>
                 </div>
             </div>
+            {/*============================================*/}
 
             {/*----------------------------------------------Our Services Card----------------------------------------------*/}
+{/*
             <div className="d-flex justify-content-around scrollUp hide">
                 <div>
                     <h1 className="text-center titleText mt-5 mb-5 ">
@@ -115,6 +163,24 @@ function HomePage() {
                     </div>
                 </div>
             </div>
+*/}
+            <div className="container">
+                <div className="row">
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="card-title">
+                                Services
+                            </div>
+                            <div className="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolor est minus odit praesentium qui sapiente. Accusantium, aut excepturi ipsa iste officia officiis quas rem, repellat sapiente similique vero, voluptates?
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             {/*----------------------------------------------Review Carousel----------------------------------------------*/}
             <h1 className="text-center titleText mt-5 mb-5 ">
                 R & R's Facebook Timeline
@@ -128,7 +194,6 @@ function HomePage() {
                     href="https://www.facebook.com/rrcaregivers/">R &amp; R Home Caregivers</a></blockquote>
             </div>
             </div>
-            <div className="mt-2 hide">div</div>
         </div>
 
     </>)

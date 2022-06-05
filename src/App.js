@@ -15,24 +15,24 @@ import {
 import HomePage from "./Pages/HomePage";
 
 
-
 function App() {
-  return (
-    <>
-        <Navbar/>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/contact" element={<Contact/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/whyRR" element={<WhyRR/>}/>
-                <Route path="/services" element={<Services/>}/>
-            </Routes>
-        </BrowserRouter>
-        <Footer/>
-                  
-    </>
-  );
+    return (
+        <>
+            <div className='main_bg_color'>
+                <Navbar/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route path="/whyRR" element={<WhyRR/>}/>
+                        <Route path="/services" element={<Services/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </div>
+            <Footer/>
+        </>
+    );
 }
 
 export default App;
