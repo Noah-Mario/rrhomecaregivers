@@ -114,7 +114,7 @@ function HomePage() {
             <Hero {...goal}/>
 
             {/*why us part --------------------------------*/}
-            <div className="container">
+            <div className="container py-5">
                 <div className="row">
                     <h4 className='text-center mb-4'>{whyUs.title}</h4>
                     <div className="col">
@@ -165,21 +165,24 @@ function HomePage() {
                 </div>
             </div>
 */}
-            <div className="container">
-                <div className="row">
-                    <div className="card">
-                        <h3 className="card-title mt-3">
-                            Services
-                        </h3>
-                        <div className="card-body d-flex justify-content-between align-content-center">
-                            <Cards {...personal}/>
-                            <Cards {...homeAssessment}/>
-                            <Cards {...homeManagement}/>
-                            <Cards {...QA}/>
-                            <Cards {...carePlan}/>
+            <div className='hero_bg py-5 mt-3'>
+                <div className="container text-dark">
+                    <div className="row">
+                        <div className="card">
+                            <h3 className="card-title mt-3">
+                                Services
+                            </h3>
+                            <div className="card-body d-flex justify-content-between align-content-center">
+                                <Cards {...personal}/>
+                                <Cards {...homeAssessment}/>
+                                <Cards {...homeManagement}/>
+                                <Cards {...QA}/>
+                                <Cards {...carePlan}/>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
 

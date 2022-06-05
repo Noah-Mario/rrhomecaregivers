@@ -1,5 +1,15 @@
 .img_size {
-    width: 50vh;
+    width: 100%;
+    margin: auto;
     height: 50vh;
     border-radius: 10px;
+}
+
+.hero_bg {
+    background-color: #6c33a3;
+    color: white
+}
+
+.pink_bg {
+    background-color: #cba6f1;
 }
