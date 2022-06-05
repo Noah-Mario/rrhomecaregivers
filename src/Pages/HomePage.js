@@ -3,7 +3,8 @@ import "./HomePage.css"
 import Mission from "../img/rrmission.jpg"
 import Goal from "../img/rrImage3.jpg"
 import Hero from "../Components/Hero";
-import {goal, mission, whyUs} from "./Data";
+import {goal, mission, whyUs, personal, homeManagement, homeAssessment, carePlan, QA} from "./Data";
+import Cards from "../Components/Cards";
 
 function HomePage() {
     const couraselImg = {
@@ -167,14 +168,15 @@ function HomePage() {
             <div className="container">
                 <div className="row">
                     <div className="card">
-                        <div className="card-body">
-                            <div className="card-title">
-                                Services
-                            </div>
-                            <div className="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolor est minus odit praesentium qui sapiente. Accusantium, aut excepturi ipsa iste officia officiis quas rem, repellat sapiente similique vero, voluptates?
-
-                            </div>
+                        <h3 className="card-title mt-3">
+                            Services
+                        </h3>
+                        <div className="card-body d-flex justify-content-between align-content-center">
+                            <Cards {...personal}/>
+                            <Cards {...homeAssessment}/>
+                            <Cards {...homeManagement}/>
+                            <Cards {...QA}/>
+                            <Cards {...carePlan}/>
                         </div>
                     </div>
                 </div>

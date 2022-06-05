@@ -34,19 +34,19 @@ export const whyUs = {
 }
 
 export const personal = {
-    title: 'Assistance with Personal',
+/*    title: 'Assistance with Personal',*/
     content: 'Care Dressing, Transferring, Grooming, Bathing, etc.'
 }
 export const homeManagement = {
-    title: 'Home Management',
+/*    title: 'Home Management',*/
     content: 'Light Housekeeping, Meal Planning, Assistance with Self-Administered Medications, etc.',
 }
 export const homeAssessment = {
-    title: 'Free Home Care Assessment'
+    content: 'Free Home Care Assessment'
 }
 export const carePlan = {
-    title: 'Individualized Plan of Care',
+    content: 'Individualized Plan of Care',
 }
 export const QA = {
-    title: 'Quality Control visits',
+    content: 'Quality Control visits',
 }

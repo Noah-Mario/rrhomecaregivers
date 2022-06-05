@@ -3,11 +3,11 @@ import Logo from "../img/LogoTransparent.png";
 const Footer = () => {
     return(
         <>
-            <div className="footerColor row d-flex justify-content-center">
-                <div className="col-2 mt-5">
+            <div className="footerColor row d-flex justify-content-center py-5">
+                <div className="col-2">
                     <a href="/"><img className="footerImage ms-5" src={Logo} alt="logo"/></a>
                 </div>
-                    <div className="col-2 mt-5">
+                    <div className="col-2">
                         <div className="text-center">
                             <a href="/contact" className="aText">Contact</a>
                         </div>
@@ -23,7 +23,7 @@ const Footer = () => {
                         <a className="aText" href="mailto:info@rrcaregivers.com">info@rrcaregivers.com</a>
                     </div>
                     </div>
-                <div className="text-center col-2 mt-5">
+                <div className="text-center col-2">
                     <div className="mb-2">
                         <a href="/about" className="aText">Services</a>
                     </div>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className=" col-6">
-                    <img src="http://via.placeholder.com/640x360" className='footerMapImage mt-2 mb-2' alt="temp"/>
+                    <img src="http://via.placeholder.com/640x360" className='footerMapImage mb-2' alt="temp"/>
                     {/*<div className="d-flex justify-content-center">*/}
                     {/*<button className="button-36 mt-1" role="button" >Get Directions</button>*/}
                     {/*</div>*/}
