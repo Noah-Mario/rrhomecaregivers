@@ -1,18 +1,23 @@
 import {useState} from "react";
 import Axios from 'axios'
+import {error} from "mapbox-gl/src/style-spec/util/result";
 
 
 function Testimonials(){
 
-    const [titleName, setTitleName] = useState('')
-    const [review, setReview] = useState('')
-    const [imageURL, setImageURL] = useState('')
+    const [titleName, setTitleName] = useState('');
+    const [review, setReview] = useState('');
+    const [imageURL, setImageURL] = useState('');
 
     const submitReview = () =>{
-        Axios.post('http://localhost:3001/api/insert', {titleName:titleName, review:review, imageURL:imageURL})
-            .then(()=>{
-                alert("success");
-        })
+        console.log("here")
+        Axios.post('localhost:3306/api/insert', {titleName:titleName, review:review, imageURL:imageURL})
+            .then((data)=>{
+                console.log("now here")
+                console.log(data);
+        }).catch((error)=>{
+            console.log(error)
+        });
     };
 
     return(<>
@@ -35,7 +40,7 @@ function Testimonials(){
                 setImageURL(e.target.value)
             }} className="form-control" id="exampleFormControlInput1" />
             <div className="mt-2">
-                <button onClick={submitReview} className="button-36" role="button">Submit</button>
+                <button onClick={submitReview} className="button-36" role="button" type="submit">Submit</button>
             </div>
         </div>
 
