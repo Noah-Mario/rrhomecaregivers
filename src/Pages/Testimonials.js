@@ -1,6 +1,6 @@
 import {useState} from "react";
 import Axios from 'axios'
-import {error} from "mapbox-gl/src/style-spec/util/result";
+
 
 
 function Testimonials(){
@@ -15,8 +15,8 @@ function Testimonials(){
             .then((data)=>{
                 console.log("now here")
                 console.log(data);
-        }).catch((error)=>{
-            console.log(error)
+        }).catch((err)=>{
+            console.log(err)
         });
     };
 
