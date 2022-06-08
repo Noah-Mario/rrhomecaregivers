@@ -4,13 +4,15 @@ const mysql = require("mysql");
 const db = require("mysql");
 
 
-// let con = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "codeup",
-//     database: "rr_database"
-// });
-//
+let con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "codeup",
+    database: "rr_database",
+});
+
+con.connect();
+
 // con.connect(function(err) {
 //     console.log("Connected!");
 // });
@@ -38,7 +40,7 @@ app.post('/create', function(req, res) {
         ImageURL: req.body.imageURL,
     };
     const sqlInsert = "INSERT INTO posts (title, text, images) VALUES (?,?,?)"
-    db.createQuery(sqlInsert, [newPosts.Title, newPosts.Review, newPosts.ImageURL], (err, result) => {
+    db.query(sqlInsert, [newPosts.Title, newPosts.Review, newPosts.ImageURL], (err, result) => {
         console.log(err)
         console.log(result);
     });
@@ -47,8 +49,8 @@ app.post('/create', function(req, res) {
 });
 
 //start your server on port 3001
-app.listen(3001, () => {
-    console.log('Server Listening on port 3001');
+app.listen(3306, () => {
+    console.log('Server Listening on port 3306');
 });
 
 
