@@ -2,7 +2,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 let mysql = require('mysql');
 const express = require('express');
+const con = require("mysql");
 const app = express();
+// const con = require('mysql');
 
 
 let db = mysql.createPool({
@@ -16,13 +18,9 @@ let db = mysql.createPool({
     database: "rr_database"
 });
 
-// mysql.connect(function(err) {
+// con.connect(function(err) {
 //     if (err) throw err;
 //     console.log("Connected!");
-//     // con.query( function (err, result) {
-//     //     if (err) throw err;
-//     //     console.log("Table created");
-//     // });
 // });
 
 
@@ -30,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors);
 app.use(express.json())
 app.post("/api/insert", (req,res) => {
-    res.set('Access-Control-Allow-Origin', 'http://localhost:3306');
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3001/api/insert');
     const title = req.body.titleName
     const text = req.body.review
     const image = req.body.imageURL
@@ -42,6 +40,6 @@ app.post("/api/insert", (req,res) => {
     })
 })
 
-app.listen(3306, () => {
+app.listen(3001, () => {
     console.log("running on port 3001");
 })
