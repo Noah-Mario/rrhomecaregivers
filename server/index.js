@@ -1,3 +1,5 @@
+
+/*
 const bodyParser = require('body-parser');
 const cors = require('cors');
 let mysql = require('mysql');
@@ -42,4 +44,48 @@ app.post("/api/insert", (req,res) => {
 
 app.listen(3001, () => {
     console.log("running on port 3001");
-})
+})*/
+
+const express = require('express');
+const cors = require('cors');
+
+
+const app = express();
+
+//use cors to allow cross origin resource sharing
+app.options('/create', function (req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    res.end();
+});
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+let posts = [];
+
+/*app.get('/testimonials', function(req, res) {
+    console.log('Inside Home Login');
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+    });
+    console.log('Books : ', JSON.stringify(books));
+    res.end(JSON.stringify(books));
+});*/
+
+app.post('/create', function(req, res) {
+    const newPosts = {
+        BookID: req.body.titleName,
+        Title: req.body.review,
+        Author: req.body.imageURL,
+    };
+
+    posts.push(newPosts);
+    console.log(posts);
+});
+
+//start your server on port 3001
+app.listen(3001, () => {
+    console.log('Server Listening on port 3001');
+});
