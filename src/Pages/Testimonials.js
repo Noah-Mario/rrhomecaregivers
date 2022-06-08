@@ -22,7 +22,7 @@ function Testimonials(){
             imageURL,
         };
         axios
-            .post('http://localhost:3001/create', post)
+            .post('http://localhost:3306/create', post)
             .then(() => console.log('Post Created'))
             .catch(err => {
                 console.error(err);
