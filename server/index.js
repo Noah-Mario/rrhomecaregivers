@@ -1,51 +1,75 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require ("body-parser")
 const mysql = require("mysql");
-const db = require("mysql");
+// const router = express.Router();
+// router.use(cors)
 
+const app = express();
+// const corsOptions = {
+//     origin: "*",
+//     optionsSuccessStatus: 200
+// }
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+// app.use(cors)
+
+// app.get("/create", (req, res) => {
+//     res.send("hi");
+// });
 
 let con = mysql.createConnection({
-    host: "localhost",
+    host: "127.0.0.1",
     user: "root",
     password: "codeup",
     database: "rr_database",
+    port: 3306
 });
 
-con.connect();
+con.connect((err) => {
+    if(!err){
+        console.log('connected!')
+    }else{
+        console.log('connection failed.' + err)
+    }
+});
 
 // con.connect(function(err) {
 //     console.log("Connected!");
 // });
 
 
-const app = express();
+
 
 //use cors to allow cross origin resource sharing
-app.options('/create', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Methods', '*');
-    res.setHeader("Access-Control-Allow-Headers", "*");
-    res.end();
+app.options('/create', function (req, res,next) {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
-let posts = [];
 
-app.post('/create', function(req, res) {
-    const newPosts = {
-        Title: req.body.titleName,
-        Review: req.body.review,
-        ImageURL: req.body.imageURL,
-    };
-    const sqlInsert = "INSERT INTO posts (title, text, images) VALUES (?,?,?)"
-    db.query(sqlInsert, [newPosts.Title, newPosts.Review, newPosts.ImageURL], (err, result) => {
-        console.log(err)
-        console.log(result);
+// let posts = [];
+
+app.post('/create', cors(), function(req, res) {
+        const title = req.body.titleName
+        const review = req.body.review
+        const imageURL = req.body.imageURL
+
+    console.log(title)
+    console.log(review)
+    console.log(imageURL)
+    const sqlInsert = "INSERT INTO posts (title, text, images) VALUES (?,?,?)";
+    con.query(sqlInsert, [title, review, imageURL], (err, result) => {
+        if (!err){
+            console.log("success")
+        }else{
+            console.log("did not work");
+        }
+
     });
-    posts.push(newPosts);
-    console.log(posts);
 });
 
 //start your server on port 3001

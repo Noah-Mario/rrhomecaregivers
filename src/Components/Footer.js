@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                 <div className="text-center col-2 mt-5">
                     <div className="mb-2">
-                        <a href="/about" className="aText">Services</a>
+                        <a href="/services" className="aText">Services</a>
                     </div>
                     <div className="mb-2">
                         <a href="/about" className="aText">About</a>

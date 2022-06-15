@@ -9,28 +9,37 @@ function Testimonials(){
     const [review, setReview] = useState('');
     const [imageURL, setImageURL] = useState('');
 
-
-    let handleSubmit = (e) => {
-        setImageURL(e.target.value);
-        setReview(e.target.value);
-        setTitleName(e.target.value);
-        e.preventDefault();
-
-        const post = {
-            titleName,
-            review,
-            imageURL,
-        };
-        axios
-            .post('http://localhost:3306/create', post)
-            .then(() => console.log('Post Created'))
-            .catch(err => {
-                console.error(err);
-            });
-    }
+let handleSubmit = (e) => {
+    axios.post("http://localhost:3306/create", {titleName: titleName, review: review, imageURL: imageURL})
+        .then(() => {
+            console.log("success")
+        })
+}
+    // let handleSubmit = (e) => {
+    //     setImageURL(e.target.value);
+    //     setReview(e.target.value);
+    //     setTitleName(e.target.value);
+    //     e.preventDefault();
+    //
+    //     const post = {
+    //         titleName,
+    //         review,
+    //         imageURL,
+    //     };
+    //     console.log(post)
+    //     fetch('http://localhost:3306/create', {
+    //         mode:"cors",
+    //         method: 'POST',
+    //         headers: { "Content-Type": 'application/x-www-form-urlencoded;charset=UTF-8'},
+    //         body: JSON.stringify(post)
+    //     })
+    //         .then((res) => res.json()).then((data) => console.log(data))
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
 
     return(<>
-
         <div className="mb-3">
             <label htmlFor="exampleFormControlInput1" className="form-label">Title</label>
             <input type="text" name="titleName" onChange={(e) => {
@@ -52,7 +61,6 @@ function Testimonials(){
                 <button onClick={handleSubmit} className="button-36" role="button" type="submit">Submit</button>
             </div>
         </div>
-
     </>);
 
 }
