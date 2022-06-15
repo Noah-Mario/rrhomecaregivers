@@ -6,18 +6,18 @@ const mysql = require("mysql");
 // router.use(cors)
 
 const app = express();
-// const corsOptions = {
-//     origin: "*",
-//     optionsSuccessStatus: 200
-// }
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200
+}
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cors)
 
-// app.get("/create", (req, res) => {
-//     res.send("hi");
-// });
+app.get("/create", (req, res) => {
+    res.send("hi");
+});
 
 let con = mysql.createConnection({
     host: "127.0.0.1",
@@ -45,10 +45,21 @@ con.connect((err) => {
 //use cors to allow cross origin resource sharing
 app.options('/create', function (req, res,next) {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization ");
     next();
 });
 
+app.get('/get', cors(corsOptions), function(req, res ){
+    const sqlGet = "Select * from post where id = ?"
+    con.query(sqlGet, (err, result) => {
+        if(!err){
+            console.log("success " + result)
+        }else{
+            console.log("FAIL")
+        }
+    })
+})
 
 
 // let posts = [];
