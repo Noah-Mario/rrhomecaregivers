@@ -51,10 +51,11 @@ app.options('/create', function (req, res,next) {
 });
 
 app.get('/get', cors(corsOptions), function(req, res ){
-    const sqlGet = "Select * from post where id = ?"
+    const sqlGet = "Select * from posts"
     con.query(sqlGet, (err, result) => {
         if(!err){
             console.log("success " + result)
+            res.send(result)
         }else{
             console.log("FAIL")
         }

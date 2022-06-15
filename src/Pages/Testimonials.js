@@ -8,10 +8,12 @@ function Testimonials(){
     const [titleName, setTitleName] = useState('');
     const [review, setReview] = useState('');
     const [imageURL, setImageURL] = useState('');
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
         axios.get("http://localhost:3306/get").then((res) =>
-            console.log(res.data))
+        setPosts(res.data))
+
     }, [])
 
     // function renderCard(){
@@ -32,7 +34,7 @@ let handleSubmit = (e) => {
 
 }
 
-    return(<>
+    return (<>
         <div className="d-flex justify-content-center">
             <div className="mb-3">
                 <label htmlFor="exampleFormControlInput1" className="form-label">Title</label>
@@ -57,9 +59,15 @@ let handleSubmit = (e) => {
             </div>
         </div>
 
-<div className="w-100 newCard">
-
-</div>
+        <div className="w-100 newCard">
+            {posts.map((value) => {
+                return <div className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+             <img src={value.image} className="image col-4"/>
+            <h1 className="text-center titleText">{value.title}</h1>
+           <p className="text-center card-t-purp">{value.text}</p>
+        </div>
+            })}
+        </div>
 
     </>);
 
