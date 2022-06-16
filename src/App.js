@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import WhyRR from "./Pages/WhyR&R";
 import Services from "./Pages/Services";
 import Testimonials from "./Pages/Testimonials";
+import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/whyRR" element={<WhyRR/>}/>
                 <Route path="/services" element={<Services/>}/>
                 <Route path="/testimonials" element={<Testimonials/>}/>
+                <Route path="/login" element={<Login/>}/>
             </Routes>
         </BrowserRouter>
         <Footer/>
