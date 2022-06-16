@@ -6,6 +6,7 @@ const Footer = () => {
             <div className="footerColor row d-flex justify-content-center">
                 <div className="col-2 mt-5">
                     <a href="/"><img className="footerImage ms-5" src={Logo} alt="logo"/></a>
+                    <a href="/login" className="aText">Login</a>
                 </div>
                     <div className="col-2 mt-5">
                         <div className="text-center">

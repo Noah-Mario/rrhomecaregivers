@@ -170,6 +170,62 @@ a:hover{
     transition-duration: .1s;
 }
 
+.btn-red {
+    background-color: rgba(246, 4, 4, 0.99);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    height: 3rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 14rem;
+
+}
+
+.btn-red:hover {
+    box-shadow: rgba(246, 4, 4, 0.8) 0 1px 30px;
+    transition-duration: .1s;
+}
+
+.btn-blue {
+    background-color: rgb(29, 73, 250);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    height: 3rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 14rem;
+
+}
+
+.btn-blue:hover {
+    box-shadow: rgba(0, 102, 255, 0.8) 0 1px 30px;
+    transition-duration: .1s;
+}
+
 @media (min-width: 768px) {
     .button-36 {
         padding: 0 2.6rem;

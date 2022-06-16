@@ -5,9 +5,9 @@ import Goal from "../img/rrImage3.jpg"
 
 function HomePage() {
 
-    const timelineSize = {
-        width: "500px"
-    };
+    // const timelineSize = {
+    //     width: "500px"
+    // };
 
     function slideFunction() {
         let slide = document.querySelectorAll(".animateUp");
