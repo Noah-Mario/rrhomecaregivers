@@ -2,8 +2,6 @@
 // const mysql = require("mysql");
 // const bcrypt = require ("bcrypt");
 // const saltRounds = 10;
-// const cookieParser = require ("cookie-parser");
-// const expressSession = require("express-session");
 
 const express = require('express');
 const cors = require('cors');
@@ -25,46 +23,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use("/posts", postRouter)
-
-
-
-
-
-
-
-// const router = express.Router();
-// router.use(cors)
-// app.use(cookieParser())
-// app.use(expressSession({
-//     key: "userId",
-//     secret: "yo",
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//         expires: 60 * 60 * 24
-//     }
-// }))
-// app.use(cors)
-
-// app.get("/create", (req, res) => {
-//     res.send("hi");
-// });
-//
-// let con = mysql.createConnection({
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "codeup",
-//     database: "rr_database",
-//     port: 3306
-// });
-//
-// con.connect((err) => {
-//     if(!err){
-//         console.log('connected!')
-//     }else{
-//         console.log('connection failed.' + err)
-//     }
-// });
 
 // // use cors to allow cross origin resource sharing
 // app.options('/create', function (req, res,next) {
@@ -109,53 +67,10 @@ app.options('/posts', (_, res) => {
     res.sendStatus(200);
 });
 
+
 app.options('*', (req, res) => {
     res.sendStatus(200);
 });
-
-// app.get('/get', cors(corsOptions), function(req, res ){
-//     const sqlGet = "SELECT * FROM posts"
-//     con.query(sqlGet, (err, result) => {
-//         if(!err){
-//             console.log("big buncha success over here " + result)
-//             res.send(result)
-//         }else{
-//             console.log("you're a failure " + err)
-//         }
-//     })
-// })
-//
-//
-// app.delete('/delete/:id', cors(corsOptions), function(req, res){
-//     const id = req.params.id
-//     const sqlDelete = "DELETE FROM posts WHERE id = ?"
-//     con.query(sqlDelete, id, (err, result) => {
-//         if(!err){
-//             console.log("Deleted and defeated. " + result)
-//         }else{
-//             console.log("delete failed... nerd. " + err)
-//         }
-//     })
-// })
-//
-// app.post('/create', cors(), function(req, res) {
-//         const title = req.body.titleName
-//         const review = req.body.review
-//         const imageURL = req.body.imageURL
-//
-//     console.log(title)
-//     console.log(review)
-//     console.log(imageURL)
-//     const sqlInsert = "INSERT INTO posts (title, text, images) VALUES (?,?,?)";
-//     con.query(sqlInsert, [title, review, imageURL], (err, result) => {
-//         if (!err){
-//             console.log("Get Inserted On! " + result)
-//         }else{
-//             console.log("didn't work loser! " + err);
-//         }
-//
-//     });
-// });
 
 // app.post("/register", cors(), (req, res)=> {
 //     const {username, password} = req.body
@@ -241,13 +156,4 @@ db.sequelize.sync().then(() => {
     });
 })
 
-
-
-// CREATE TABLE posts(
-//     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-//     title VARCHAR(100),
-//     text TEXT NOT NULL,
-//     images VARCHAR(10000),
-//     PRIMARY KEY (id)
-// );
 
