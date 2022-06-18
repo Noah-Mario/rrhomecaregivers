@@ -4,6 +4,52 @@ const router = express.Router();
 const {Users} = require("../models");
 const bcrypt = require ("bcrypt");
 const saltRounds = 10;
+const { sign, verify} = require('jsonwebtoken');
+const REACT_APP_JWT_SECRET = process.env;
+const cookieParser = require('cookie-parser');
+router.use(cookieParser())
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+
+}
+
+const createTokens = (user) => {
+    console.log(REACT_APP_JWT_SECRET)
+    const accessToken = sign({username: user.username, id: user.id}, "GHyJikJKi987655yHyHHFfdsCb87654");
+    return accessToken;
+}
+
+const validateToken = (req, res, next ) => {
+    const accessToken = req.cookies["accessToken"];
+
+    if(!accessToken)
+        return res.status(400).json({error : "User not AUth"})
+
+    try {
+        const validToken = verify(accessToken, "GHyJikJKi987655yHyHHFfdsCb87654")
+        console.log(REACT_APP_JWT_SECRET)
+        if(validToken){
+            req.authenticated = true
+            return next()
+        }
+    } catch (err){
+        return res.status(400).json({error : err})
+    }
+
+}
+
+router.get("/", cors(corsOptions), async(req, res)=> {
+    const {token } = req.cookies;
+    console.log(token)
+})
+
+
+
+module.exports = {createTokens}
+
 
 router.options('/', function (req, res,next) {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -12,13 +58,7 @@ router.options('/', function (req, res,next) {
     next();
 });
 
-const corsOptions = {
-    origin: "http://localhost:3000",
-    optionsSuccessStatus: 200,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
 
-}
 
 // router.post("/", cors(corsOptions), (req, res)=> {
 //     const {username, password} = req.body
@@ -46,6 +86,12 @@ router.post("/", cors(corsOptions), async(req, res)=> {
             if(!match){
                 console.log('wrong username and password')
             }else{
+                const accessToken = createTokens(user)
+                res.cookie("access-token", accessToken, {
+                    maxAge : 60 * 60 * 24 * 30 * 1000,
+                    httpOnly: true,
+                })
+
                 console.log("you logged in")
             }
         })

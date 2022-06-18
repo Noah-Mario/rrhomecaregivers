@@ -1,13 +1,15 @@
 import "./Contact.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
-import {MAP_BOX_API} from "../Utils/Config";
+
 
 import {useEffect, useRef, useState} from "react";
 
 
 function Contact() {
-    mapboxgl.accessToken = MAP_BOX_API;
+    const {REACT_APP_MAPBOX_API_KEY} = process.env;
+    console.log(REACT_APP_MAPBOX_API_KEY)
+    mapboxgl.accessToken = REACT_APP_MAPBOX_API_KEY;
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng, setLng] = useState(-98.602100);
