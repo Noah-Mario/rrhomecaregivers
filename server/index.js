@@ -4,14 +4,15 @@ const userRouter = require('./routes/Users')
 const express = require('express');
 const bodyParser = require ("body-parser")
 const db = require('./models')
-
+const cookieParser = require('cookie-parser');
+const {createTokens} =require('./routes/Users')
 const app = express();
 
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(cookieParser())
 app.use("/posts", postRouter)
 
 app.use("/users", userRouter)

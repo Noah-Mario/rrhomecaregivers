@@ -8,6 +8,7 @@ import Testimonials from "./Pages/Testimonials";
 import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import axios from "axios";
 
 import {
     BrowserRouter,
@@ -19,6 +20,19 @@ import HomePage from "./Pages/HomePage";
 
 
 function App() {
+    //
+    // function checkLoginStatus(){
+    //     axios.get("http://localhost:3306/Users", {withCredentials: true}).then((res) => {
+    //         console.log("logged in? ", res)
+    //     }).catch((error) => {
+    //         console.log("error ", error)
+    //     })
+    // }
+    //
+    // function componentDidMount(){
+    //     checkLoginStatus()
+    // }
+
   return (
     <>
         <Navbar/>

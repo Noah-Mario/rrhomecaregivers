@@ -4,6 +4,7 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 
 
 
+
 function Testimonials() {
 
     const initialValues ={
@@ -34,7 +35,24 @@ function Testimonials() {
         window.location.reload()
     }
 
+    useEffect(  () => {
+        axios.get("http://localhost:3306/users").then((res) => {
+
+            console.log(res)
+        })
+    })
+
+    // const[user, setUser] = useState();
+
+    // if(user){
+    //     return <div>{user.name} is logged in</div>
+    // }
+
+
+
     return (<>
+
+
 
         <div className="createPost">
             <Formik initialValues={initialValues} onSubmit={onSubmit} >
