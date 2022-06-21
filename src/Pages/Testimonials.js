@@ -7,6 +7,7 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 
 function Testimonials() {
 
+
     const initialValues ={
         title: "",
         review: "",
@@ -35,12 +36,12 @@ function Testimonials() {
         window.location.reload()
     }
 
-    useEffect(  () => {
-        axios.get("http://localhost:3306/users").then((res) => {
+    const getUser = () => {
+        axios.get("http://localhost:3306/users", {withCredentials: true}).then((res) => {
 
             console.log(res)
         })
-    })
+    }
 
     // const[user, setUser] = useState();
 
@@ -67,6 +68,7 @@ function Testimonials() {
                 </Form>
             </Formik>
         </div>
+        <button onClick={getUser} className="btn-red" role="button" type="submit">Write Post</button>
 
         <div className="w-100 newCard row d-flex justify-content-around">
             {listOfPosts.map((value, key) => {

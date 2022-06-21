@@ -1,12 +1,23 @@
 import Logo from "../img/LogoTransparent.png";
+import axios from "axios"
 
 const Footer = () => {
+
+
+    const logout = () => {
+    axios.get("http://localhost:3306/users/logout").then((res) => {
+        console.log("logged out")
+
+        }
+    )}
+
     return(
         <>
             <div className="footerColor row d-flex justify-content-center">
                 <div className="col-2 mt-5">
                     <a href="/"><img className="footerImage ms-5" src={Logo} alt="logo"/></a>
                     <a href="/login" className="aText">Login</a>
+                    <a onClick={logout} className="aText">Logout</a>
                 </div>
                     <div className="col-2 mt-5">
                         <div className="text-center">
