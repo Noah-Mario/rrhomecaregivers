@@ -3,6 +3,7 @@ import axios from "axios"
 
 function Login() {
 
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState("")
@@ -13,7 +14,7 @@ function Login() {
     //         console.log(res)
     //     })
 const login = (e) => {
-    axios.post("http://localhost:3306/users", {username: username, password: password})
+    axios.post("http://localhost:3306/users",{username: username, password: password} , {withCredentials: true, credentials: 'include'})
         .then((res) => {
             console.log("work")
         })

@@ -1,4 +1,5 @@
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const router = express.Router();
 const {Users} = require("../models");
@@ -6,24 +7,27 @@ const bcrypt = require ("bcrypt");
 const saltRounds = 10;
 const { sign, verify} = require('jsonwebtoken');
 const REACT_APP_JWT_SECRET = process.env;
-const cookieParser = require('cookie-parser');
+
 router.use(cookieParser())
 const corsOptions = {
     origin: "http://localhost:3000",
     optionsSuccessStatus: 200,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
-
+    credentials: true
 }
 
 const createTokens = (user) => {
     console.log(REACT_APP_JWT_SECRET)
-    const accessToken = sign({username: user.username, id: user.id}, "GHyJikJKi987655yHyHHFfdsCb87654");
-    return accessToken;
+    const accessToken =  sign({username: user.username}, "GHyJikJKi987655yHyHHFfdsCb87654");
+    // console.log(accessToken)
+    return accessToken
 }
 
 const validateToken = (req, res, next ) => {
-    const accessToken = req.cookies["accessToken"];
+    console.log(req.cookies["access-token"])
+    const accessToken = req.cookies
+    console.log(accessToken)
 
     if(!accessToken)
         return res.status(400).json({error : "User not AUth"})
@@ -32,31 +36,36 @@ const validateToken = (req, res, next ) => {
         const validToken = verify(accessToken, "GHyJikJKi987655yHyHHFfdsCb87654")
         console.log(REACT_APP_JWT_SECRET)
         if(validToken){
+            console.log("user authenticated")
             req.authenticated = true
             return next()
         }
     } catch (err){
+        console.log(accessToken)
         return res.status(400).json({error : err})
     }
 
 }
 
-router.get("/", cors(corsOptions), async(req, res)=> {
-    const {token } = req.cookies;
-    console.log(token)
-})
-
-
-
-module.exports = {createTokens}
-
-
 router.options('/', function (req, res,next) {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE");
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization ");
+    res.setHeader("Access-Control-Allow-Credentials", 'true')
     next();
 });
+
+router.get("/" , cors(corsOptions), validateToken ,  async(req, res)=> {
+    res.json(res)
+    console.log("valid")
+})
+
+
+
+module.exports = {createTokens, validateToken}
+
+
+
 
 
 
@@ -79,6 +88,7 @@ router.options('/', function (req, res,next) {
 router.post("/", cors(corsOptions), async(req, res)=> {
     const {username, password} = req.body
     const user = await Users.findOne({where: {username: username}})
+    // console.log(user)
     if (!user) {
         console.log("no user")
     } else {
@@ -89,12 +99,22 @@ router.post("/", cors(corsOptions), async(req, res)=> {
                 const accessToken = createTokens(user)
                 res.cookie("access-token", accessToken, {
                     maxAge : 60 * 60 * 24 * 30 * 1000,
-                    httpOnly: true,
-                })
 
+                })
+                res.cookie("name", "name")
+                console.log(accessToken)
                 console.log("you logged in")
             }
         })
 }});
 
+router.get("/logout", cors(corsOptions), async(req, res)=> {
+    let newCook = res.clearCookie("username")
+    res.cookie("access-token", "", {
+        maxAge: 1
+    });
+    console.log(newCook)
+    console.log(res.cookie["access-token"])
+    console.log("done")
+})
 module.exports = router
