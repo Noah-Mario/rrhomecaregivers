@@ -5,7 +5,7 @@ const Footer = () => {
 
 
     const logout = () => {
-    axios.get("http://localhost:3306/users/logout").then((res) => {
+    axios.get("http://localhost:3306/users/logout", {withCredentials: true, credentials: 'include'}).then((res) => {
         console.log("logged out")
 
         }
