@@ -36,26 +36,41 @@ function Testimonials() {
         window.location.reload()
     }
 
-    const getUser = () => {
-        axios.get("http://localhost:3306/users", {withCredentials: true}).then((res) => {
+    const getUser = (e) => {
+        axios.get("http://localhost:3306/users", {withCredentials: true, credentials: 'include'}).then((res) => {
+            const valid = res.data
+            if(valid === "valid"){
+                const post = document.querySelectorAll('.createPost')
+                post.forEach(x => x.classList.toggle('hide'));
 
-            console.log(res)
+            }else{
+                console.log("fail")
+            }
+
         })
     }
-
-    // const[user, setUser] = useState();
-
-    // if(user){
-    //     return <div>{user.name} is logged in</div>
-    // }
 
 
 
     return (<>
+        <h1 className="text-center underline titleText">
+            Testimonials
+        </h1>
 
+        <div className="w-100 newCard row d-flex justify-content-around">
+            {listOfPosts.map((value, key) => {
+                return <div
+                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
+                    <img src={value.imageUrl} className="image col-4"/>
+                    <h1 className="text-center titleText">{value.title}</h1>
+                    <p className="text-center card-t-purp">{value.review}</p>
+                    <p className="hide">{value.id}</p>
+                    <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
+                </div>
+            })}
+        </div>
 
-
-        <div className="createPost">
+        <div className="createPost hide">
             <Formik initialValues={initialValues} onSubmit={onSubmit} >
                 <Form>
                     <label>Title: </label>
@@ -69,19 +84,6 @@ function Testimonials() {
             </Formik>
         </div>
         <button onClick={getUser} className="btn-red" role="button" type="submit">Write Post</button>
-
-        <div className="w-100 newCard row d-flex justify-content-around">
-            {listOfPosts.map((value, key) => {
-                return <div
-                    className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
-                    <img src={value.imageUrl} className="image col-4"/>
-                    <h1 className="text-center titleText">{value.title}</h1>
-                    <p className="text-center card-t-purp">{value.review}</p>
-                    <p className="hide">{value.id}</p>
-                    <button onClick={() => {deleteReview(value.id)}} className="btn-red" role="button" type="submit">Delete</button>
-                </div>
-            })}
-        </div>
 
     </>);
 
