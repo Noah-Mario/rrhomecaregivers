@@ -12,6 +12,7 @@ function Testimonials() {
         title: "",
         review: "",
         imageUrl: "",
+        imageUrl2: "",
     }
 
     const [listOfPosts, setListOfPosts] = useState([]);
@@ -42,7 +43,6 @@ function Testimonials() {
             if(valid === "valid"){
                 const post = document.querySelectorAll('.createPost')
                 post.forEach(x => x.classList.toggle('hide'));
-
             }else{
                 console.log("fail")
             }
@@ -61,9 +61,9 @@ function Testimonials() {
             {listOfPosts.map((value, key) => {
                 return <div
                     className="container-fluid rCorners2 card-shadow card-w box2 row mb-5 d-flex justify-content-center">
-                    <img src={value.imageUrl} className="image col-4"/>
                     <h1 className="text-center titleText">{value.title}</h1>
                     <p className="text-center card-t-purp">{value.review}</p>
+                    <img src={value.imageUrl} className="image col-4"/>
                     <p className="hide">{value.id}</p>
                     <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
                 </div>
@@ -73,12 +73,20 @@ function Testimonials() {
         <div className="createPost hide">
             <Formik initialValues={initialValues} onSubmit={onSubmit} >
                 <Form>
-                    <label>Title: </label>
-                    <Field id="inoutCreatePost"  name="title" placeholder="Author" />
-                    <label>Review: </label>
-                    <Field id="inoutCreatePost"  name="review" placeholder="Review" />
-                    <label>ImageUrl: </label>
-                    <Field id="inoutCreatePost"  name="imageUrl" placeholder="ImageUrl" />
+                    <div className="mb-2">
+                        <Field className="form" id="inoutCreatePost"  name="title" placeholder="Author" />
+                    </div>
+                    <div className="mb-2">
+                        <Field id="inoutCreatePost" className="review" as="textarea" name="review" placeholder="Review" />
+                    </div>
+                    <div className="mb-2">
+                        <label>ImageUrl: </label>
+                        <Field id="inoutCreatePost"  name="imageUrl" placeholder="ImageUrl" />
+                    </div>
+                    <div className="mb-2">
+                        <label>ImageUrl2: </label>
+                        <Field id="inoutCreatePost"  name="imageUrl2" placeholder="ImageUrl2" />
+                    </div>
                     <button className="button-36" role="button" type="submit">Submit</button>
                 </Form>
             </Formik>

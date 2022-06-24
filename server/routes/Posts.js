@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {Posts} = require("../models");
 const cors = require('cors');
+const fileUpload = require('express-fileupload');
 
 const corsOptions = {
     origin: "http://localhost:3000",
@@ -41,6 +42,18 @@ router.delete('/:id',cors(corsOptions),async(req,res) => {
     await Posts.destroy({where : {id : id}})
 
 })
+
+// router.post('/upload', (req,res) => {
+//     if(req.files === null){
+//         return res.status(400).json({msg: 'no file uploaded'})
+//     }
+//
+//     const file = req.files.file
+//
+//     file
+// })
+
+
 
 
 

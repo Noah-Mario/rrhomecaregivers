@@ -1,13 +1,20 @@
 import "./HomePage.css"
-
 import Mission from "../img/rrmission.jpg"
 import Goal from "../img/rrImage3.jpg"
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
 
-    // const timelineSize = {
-    //     width: "500px"
-    // };
+    const navigate = useNavigate();
+
+    const services = () => {
+        navigate('/services')
+    }
+
+    const reviews = () => {
+        navigate('/testimonials')
+    }
 
     function slideFunction() {
         let slide = document.querySelectorAll(".animateUp");
@@ -96,7 +103,7 @@ function HomePage() {
                             <li>Quality Control Visits</li>
                         </ul>
                         <div className="d-flex justify-content-center">
-                            <button className="button-36" role="button">Learn More!</button>
+                            <button onClick={services} className="button-36" role="button">Learn More!</button>
                         </div>
                     </div>
                 </div>
@@ -106,11 +113,13 @@ function HomePage() {
                     </h1>
                     <div className=" container box-width rCorners2 card-shadow box2 mb-5 ">
                         <ul className="card-t-purp dot-none">
-                            <li>Check out the what people have to say about R & R Home Caregivers!
+                            <li className="mb-2">Check out what other people have to say about R & R Home Caregivers!
+                            </li>
+                            <li>If you would like to leave a review contact us through the contact page and we'll get it posted.
                             </li>
                         </ul>
                         <div className="d-flex justify-content-center">
-                            <button className="button-36" role="button">Apply Today!</button>
+                            <button onClick={reviews} className="button-36" role="button">See the Reviews</button>
                         </div>
                     </div>
                 </div>

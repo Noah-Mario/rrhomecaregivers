@@ -1,23 +1,51 @@
 import Logo from "../img/LogoTransparent.png";
 import axios from "axios"
+import mapboxgl from "mapbox-gl";
+import {useEffect, useRef, useState} from "react";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const Footer = () => {
+
+    const {REACT_APP_MAPBOX_API_KEY} = process.env;
+    mapboxgl.accessToken = REACT_APP_MAPBOX_API_KEY;
+    const mapContainer = useRef(null);
+    const map = useRef(null);
+    const [lng, setLng] = useState(-98.602100);
+    const [lat, setLat] = useState(29.515450);
+    const [zoom, setZoom] = useState(13);
+
+    const marker = new mapboxgl.Marker({
+        color: "#ff1500",
+        draggable: false,
+    }).setLngLat([lng, -lat]);
+
+
+    useEffect(() => {
+        if (map.current) return; // initialize map only once
+        map.current = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [lng, lat],
+            zoom: zoom,
+        });
+    });
 
 
     const logout = () => {
     axios.get("http://localhost:3306/users/logout", {withCredentials: true, credentials: 'include'}).then((res) => {
         console.log("logged out")
-
         }
     )}
 
     return(
         <>
             <div className="footerColor row d-flex justify-content-center">
-                <div className="col-2 mt-5">
-                    <a href="/"><img className="footerImage ms-5" src={Logo} alt="logo"/></a>
-                    <a href="/login" className="aText">Login</a>
-                    <a onClick={logout} className="aText">Logout</a>
+                <div className="col-2 mt-5 text-center">
+                    <a href="/"><img className="footerImage" src={Logo} alt="logo"/></a>
+                    {/*<div className="text-center mt-4 d-flex justify-content-around">*/}
+                    {/*<a href="/login" className="aText">Login</a>*/}
+                    {/*<a onClick={logout} className="aText">Logout</a>*/}
+                    {/*</div>*/}
                 </div>
                     <div className="col-2 mt-5">
                         <div className="text-center">
@@ -34,6 +62,9 @@ const Footer = () => {
                     <div className=""><span className="material-icons icon-size-sm text-center">&#xe158;</span>
                         <a className="aText" href="mailto:info@rrcaregivers.com">info@rrcaregivers.com</a>
                     </div>
+                        <div className="text-center mt-2">
+                            <a href="/login" className="aText">Login</a>
+                        </div>
                     </div>
                 <div className="text-center col-2 mt-5">
                     <div className="mb-2">
@@ -48,12 +79,14 @@ const Footer = () => {
                     <div className="mb-2">
                         <a href="/" className="aText">Testimonials</a>
                     </div>
+                    <div className="mb-2">
+                        <a onClick={logout} className="aText">Logout</a>
+                    </div>
                 </div>
                 <div className=" col-6">
-                    <img src="http://via.placeholder.com/640x360" className='footerMapImage mt-2 mb-2' alt="temp"/>
-                    {/*<div className="d-flex justify-content-center">*/}
-                    {/*<button className="button-36 mt-1" role="button" >Get Directions</button>*/}
-                    {/*</div>*/}
+                    <div className="map">
+                        <div ref={mapContainer} className="map-container map"/>
+                    </div>
                 </div>
 
 
