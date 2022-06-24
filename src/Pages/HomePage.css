@@ -15,7 +15,7 @@
 }
 
 .hide{
-    visibility: hidden;
+    display: none;
 }
 
 .card-h {
@@ -253,4 +253,17 @@ a:hover{
 
 .timelineSize{
     width:400px;
+}
+
+.map{
+    height: 20vh;
+}
+
+.form{
+    width: 40vw;
+}
+
+.review{
+    width: 40vw;
+    height: 20vh;
 }

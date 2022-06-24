@@ -8,7 +8,6 @@ import {useEffect, useRef, useState} from "react";
 
 function Contact() {
     const {REACT_APP_MAPBOX_API_KEY} = process.env;
-    console.log(REACT_APP_MAPBOX_API_KEY)
     mapboxgl.accessToken = REACT_APP_MAPBOX_API_KEY;
     const mapContainer = useRef(null);
     const map = useRef(null);

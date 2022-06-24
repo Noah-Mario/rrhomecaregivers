@@ -92,7 +92,6 @@ router.post("/", cors(corsOptions), async(req, res)=> {
     console.log("username " , username)
     console.log("password " , password)
     const user = await Users.findOne({where: {username: username}})
-    // console.log(user)
     if (!user) {
         console.log("no user")
     } else {
@@ -117,14 +116,7 @@ router.post("/", cors(corsOptions), async(req, res)=> {
 
 router.get("/logout", cors(corsOptions), async(req, res)=> {
     res.clearCookie("access-token").send()
-    // res.cookie("access-token", "", {
-    //     maxAge: 1
-    // });
-    // res.status(200).send({
-    //     "access-token": ""
-    // })
-    // console.log(newCook)
-    console.log(res.cookie["access-token"])
     console.log("done")
 })
+
 module.exports = router
