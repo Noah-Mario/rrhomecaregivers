@@ -1,6 +1,7 @@
 
 const postRouter = require('./routes/Posts')
 const userRouter = require('./routes/Users')
+const imageRouter = require('./routes/Images')
 const express = require('express');
 const bodyParser = require ("body-parser")
 const db = require('./models')
@@ -14,9 +15,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended:true}));
-
 app.use("/posts", postRouter)
-
+app.use("/images", imageRouter)
 app.use("/users", userRouter)
 
 

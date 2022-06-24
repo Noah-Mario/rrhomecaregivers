@@ -2,7 +2,7 @@
 
 
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define("Posts", {
+    const Posts = sequelize.define("Posts", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -11,9 +11,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(1000),
             allowNull: false,
         },
-        imageUrl: {
-            type: DataTypes.STRING(5000),
-            allowNull: false,
-        },
     });
+
+    Posts.associate = (models) => {
+        Posts.hasMany(models.Images, {
+            onDelete: "cascade"
+        })
+    }
+    return Posts
 }
