@@ -33,14 +33,25 @@ function Testimonials() {
     // }
 
     const onSubmit = () => {
+
         let i = 0;
-        let last = listOfPosts.at(-1)
-        let lastId = last.id + 1
+
         while ( i < endpoints.length) {
+            let last = listOfPosts.at(-1)
+            let lastId = last.id + 1
             if (endpoints[i] === "http://localhost:3306/images") {
-                axios.post("http://localhost:3306/images", {url: url}).then((res) => {
+                axios.post("http://localhost:3306/images", {url: url, postId: lastId }).then((res) => {
                     console.log(res)
                 })
+                // if(last === false){
+                //     axios.post("http://localhost:3306/images", {url: url, postId: 1}).then((res) => {
+                //         console.log(res)
+                //     })
+                // }else{
+                //     axios.post("http://localhost:3306/images", {url: url, postId: lastId }).then((res) => {
+                //         console.log(res)
+                //     })
+                // }
             }else {
                 axios.post("http://localhost:3306/posts", {title: title, review: review}).then((res) => {
                     console.log(res)
@@ -96,9 +107,14 @@ function Testimonials() {
                     <h1 className="text-center titleText">{value.title}</h1>
                     <p className="text-center card-t-purp">{value.review}</p>
                        {listOfImages.map((val, key) => {
-                           return<>
-                               <img alt="uploaded" src={val.url} className="image col-4"/>
-                           </>
+                           console.log("image ", val.PostId)
+                           console.log("list ", listOfPosts.id)
+                           if (val.PostId === 1) {
+                               return <>
+                                   <img alt="uploaded" src={val.url} className="image col-4"/>
+                               </>
+                           }
+
                        })}
                     <p className="hide">{value.id}</p>
                     <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
