@@ -12,24 +12,40 @@ function Testimonials() {
     const [url, setUrl] = useState("")
     const [listOfPosts, setListOfPosts] = useState([]);
     const [listOfImages, setListOfImages] = useState([]);
-
+    //
+    // let last = listOfPosts.at(-1)
+    // console.log(last)
+    // console.log(last.id)
 
     let endpoints = [
         "http://localhost:3306/posts",
         "http://localhost:3306/images"
     ];
 
+    // if(last === false){
+    //     axios.post("http://localhost:3306/images", {url: url, postId: 1}).then((res) => {
+    //         console.log(res)
+    //     })
+    // }else{
+    //     axios.post("http://localhost:3306/images", {url: url, postId: lastId }).then((res) => {
+    //         console.log(res)
+    //     })
+    // }
+
     const onSubmit = () => {
         let i = 0;
+        let last = listOfPosts.at(-1)
+        let lastId = last.id + 1
         while ( i < endpoints.length) {
             if (endpoints[i] === "http://localhost:3306/images") {
                 axios.post("http://localhost:3306/images", {url: url}).then((res) => {
                     console.log(res)
                 })
-            }
-                axios.post("http://localhost:3306/posts",{title: title, review: review} ).then((res) => {
+            }else {
+                axios.post("http://localhost:3306/posts", {title: title, review: review}).then((res) => {
                     console.log(res)
                 })
+            }
             i++
         }
     }
