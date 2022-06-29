@@ -1,24 +1,37 @@
 
+const express = require('express');
+const app = express();
+app.use(express.json());
 const postRouter = require('./routes/Posts')
+app.use("/posts", postRouter)
 const userRouter = require('./routes/Users')
 const imageRouter = require('./routes/Images')
-const express = require('express');
+app.use("/images", imageRouter)
+
 const bodyParser = require ("body-parser")
 const db = require('./models')
 const cookieParser = require('cookie-parser');
-const {createTokens, validateToken} =require('./routes/Users')
-const app = express();
+// const {createTokens, validateToken} =require('./routes/Users')
+
+// const Posts = require('./models/Posts.js');
+// const Images = require('./models/Images.js');
+// const {Sequelize} = require("sequelize");
+
 
 
 app.use(cookieParser())
 app.use(bodyParser.json());
-app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended:true}));
-app.use("/posts", postRouter)
-app.use("/images", imageRouter)
+
+
 app.use("/users", userRouter)
 
+db.Posts.hasMany(db.Images, {
+    as:'images',
+    allowNull: false
+})
 
 app.options('/posts',function (req, res,next) {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");

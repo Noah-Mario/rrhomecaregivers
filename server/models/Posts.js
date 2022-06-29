@@ -1,7 +1,8 @@
 
 
-
+// const Images = require("../Images")
 module.exports = (sequelize, DataTypes) => {
+
     const Posts = sequelize.define("Posts", {
         title: {
             type: DataTypes.STRING,
@@ -13,10 +14,18 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    Posts.associate = (models) => {
-        Posts.hasMany(models.Images, {
-            onDelete: "cascade"
-        })
-    }
-    return Posts
+    // Posts.associate = function(models) {
+    //     // models.Images = require('./Images');
+    //     Posts.hasMany(models.Images, {
+    //         foreignKey: "postId",
+    //         onDelete: "cascade"
+    //     })
+    // }
+
+    return Posts;
 }
+
+    // Posts.hasMany(Images)
+    // Images.belongsTo(Posts)
+
+//
