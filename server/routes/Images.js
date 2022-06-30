@@ -36,11 +36,19 @@ router.post('/',cors(corsOptions),async(req,res)=> {
     // await Images.create({url: imagesUrl})
 });
 
-router.get('/',cors(corsOptions),async(req, res) => {
-    // const postId = req.params.postId
-    // const listOfImages = await Images.findAll({where: {postId: postId}});
-    const listOfImages = await Images.findAll();
-    res.json(listOfImages)
+// router.get('/',cors(corsOptions),async(req, res) => {
+//     // const postId = req.params.postId
+//     // const listOfImages = await Images.findAll({where: {postId: postId}});
+//     const listOfImages = await Images.findAll();
+//     res.json(listOfImages)
+// });
+
+router.get('/:postId',cors(corsOptions),async(req, res) => {
+    const postId = req.params.postId
+    console.log(postId)
+    const listOfImages = await Images.findAll({where: {postId: postId}});
+    // const listOfImages = await Images.findAll();
+    res.send(listOfImages)
 });
 
 

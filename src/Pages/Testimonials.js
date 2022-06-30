@@ -40,7 +40,7 @@ function Testimonials() {
             let last = listOfPosts.at(-1)
             let lastId = last.id + 1
             if (endpoints[i] === "http://localhost:3306/images") {
-                axios.post("http://localhost:3306/images", {url: url, postId: lastId }).then((res) => {
+                axios.post("http://localhost:3306/images", {url: url, postId: 3 }).then((res) => {
                     console.log(res)
                 })
                 // if(last === false){
@@ -71,6 +71,11 @@ function Testimonials() {
         axios.get("http://localhost:3306/images").then((res) =>
             setListOfImages(res.data))
     }, [])
+// const post = (postId) => {
+//         axios.get(`http://localhost:3306/images/${postId}`).then((res) =>
+//
+//             setListOfImages(res.data))
+//     }
 
 
     const deleteReview = (id) => {
@@ -106,20 +111,20 @@ function Testimonials() {
                    <div className=" rCorners2 card-shadow card-w box2 row  mb-5 ">
                     <h1 className="text-center titleText">{value.title}</h1>
                     <p className="text-center card-t-purp">{value.review}</p>
-                       {listOfImages.map((val, key) => {
-                           console.log("image ", val.PostId)
-                           console.log("list ", listOfPosts.id)
-                           if (val.PostId === 1) {
-                               return <>
-                                   <img alt="uploaded" src={val.url} className="image col-4"/>
-                               </>
-                           }
-
-                       })}
-                    <p className="hide">{value.id}</p>
+                       <p className="hide">{value.id}</p>
+                    {/*<p onLoad={(e) => {post(value.id)}} className="hide">{value.id}</p>*/}
                     <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
                 </div>
                 </>
+
+            })}
+            {listOfImages.map((val, key) => {
+                console.log("image ", val)
+                console.log("list ", listOfPosts[key].id)
+                return <>
+                    <img alt="uploaded" src={val.url} className="image col-4"/>
+                </>
+
 
             })}
 
