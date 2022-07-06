@@ -1,5 +1,6 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import Popup from "../Components/Popup";
 
 
 
@@ -7,6 +8,7 @@ import axios from 'axios';
 
 function Testimonials() {
 
+    const[buttonPopup, setButtonPopup] = useState(false)
     const [title, setTitle] = useState ("")
     const [review, setReview] = useState("")
     const [url, setUrl] = useState("")
@@ -67,16 +69,30 @@ function Testimonials() {
             setListOfPosts(res.data))
     }, [])
 
-    useEffect(() => {
-        axios.get("http://localhost:3306/images").then((res) =>
-            setListOfImages(res.data))
-    }, [])
-// const post = (postId) => {
-//         axios.get(`http://localhost:3306/images/${postId}`).then((res) =>
-//
-//             setListOfImages(res.data))
-//     }
+    // useEffect(() => {
+    //     axios.get("http://localhost:3306/images").then((res) =>
+    //         setListOfImages(res.data))
+    // }, [])
 
+const post = (postId) => {
+        setButtonPopup(true)
+        axios.get(`http://localhost:3306/images/${postId}`).then((res) =>
+            // console.log(res.data))
+            setListOfImages(res.data))
+
+    }
+ function listImages(){
+
+     listOfImages.map((val, key) => {
+         console.log("image ", val)
+         console.log("list ", listOfPosts[key].id)
+         return <>
+             <img alt="uploaded" src={val.url} className="image col-4"/>
+         </>
+
+
+     })
+ }
 
     const deleteReview = (id) => {
         axios.delete(`http://localhost:3306/posts/${id}`).then((res) =>
@@ -113,20 +129,22 @@ function Testimonials() {
                     <p className="text-center card-t-purp">{value.review}</p>
                        <p className="hide">{value.id}</p>
                     {/*<p onLoad={(e) => {post(value.id)}} className="hide">{value.id}</p>*/}
+                    {/*   {listOfImages.map((val, key) => {*/}
+                    {/*       console.log("image ", val)*/}
+                    {/*       console.log("list ", listOfPosts[key].id)*/}
+                    {/*       return <>*/}
+                    {/*           <img alt="uploaded" src={val.url} className="image col-4"/>*/}
+                    {/*       </>*/}
+
+
+                    {/*   })}*/}
+                       <button onClick={() => {post(value.id)}} on className="btn-blue createPost" role="button" type="submit">See Images</button>
                     <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
                 </div>
                 </>
 
             })}
-            {listOfImages.map((val, key) => {
-                console.log("image ", val)
-                console.log("list ", listOfPosts[key].id)
-                return <>
-                    <img alt="uploaded" src={val.url} className="image col-4"/>
-                </>
 
-
-            })}
 
         </div>
 
@@ -145,6 +163,19 @@ function Testimonials() {
                 </form>
         </div>
         <button onClick={getUser} className="btn-red" role="button" type="submit">Write Post</button>
+
+        <Popup trigger={buttonPopup}>
+               {listOfImages.map((val, key) => {
+                   console.log("image ", val)
+                   console.log("list ", listOfPosts[key].id)
+                   return <>
+                       <img alt="uploaded" src={val.url} className="image col-4"/>
+                   </>
+
+
+               })}
+            <button onClick={() => setButtonPopup(false)} className="close-btn">close</button>
+        </Popup>
 
     </>);
 

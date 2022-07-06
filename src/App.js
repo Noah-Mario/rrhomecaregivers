@@ -8,6 +8,7 @@ import Testimonials from "./Pages/Testimonials";
 import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Popup from "./Components/Popup";
 
 import {
     BrowserRouter,
