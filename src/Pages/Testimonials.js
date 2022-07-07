@@ -14,10 +14,6 @@ function Testimonials() {
     const [url, setUrl] = useState("")
     const [listOfPosts, setListOfPosts] = useState([]);
     const [listOfImages, setListOfImages] = useState([]);
-    //
-    // let last = listOfPosts.at(-1)
-    // console.log(last)
-    // console.log(last.id)
 
     let endpoints = [
         "http://localhost:3306/posts",
@@ -39,10 +35,10 @@ function Testimonials() {
         let i = 0;
 
         while ( i < endpoints.length) {
-            let last = listOfPosts.at(-1)
-            let lastId = last.id + 1
+            // let last = listOfPosts.at(-1)
+            // let lastId = last.id + 1
             if (endpoints[i] === "http://localhost:3306/images") {
-                axios.post("http://localhost:3306/images", {url: url, postId: 3 }).then((res) => {
+                axios.post("http://localhost:3306/images", {url: url, postId: 1 }).then((res) => {
                     console.log(res)
                 })
                 // if(last === false){
@@ -81,18 +77,6 @@ const post = (postId) => {
             setListOfImages(res.data))
 
     }
- function listImages(){
-
-     listOfImages.map((val, key) => {
-         console.log("image ", val)
-         console.log("list ", listOfPosts[key].id)
-         return <>
-             <img alt="uploaded" src={val.url} className="image col-4"/>
-         </>
-
-
-     })
- }
 
     const deleteReview = (id) => {
         axios.delete(`http://localhost:3306/posts/${id}`).then((res) =>
@@ -128,16 +112,6 @@ const post = (postId) => {
                     <h1 className="text-center titleText">{value.title}</h1>
                     <p className="text-center card-t-purp">{value.review}</p>
                        <p className="hide">{value.id}</p>
-                    {/*<p onLoad={(e) => {post(value.id)}} className="hide">{value.id}</p>*/}
-                    {/*   {listOfImages.map((val, key) => {*/}
-                    {/*       console.log("image ", val)*/}
-                    {/*       console.log("list ", listOfPosts[key].id)*/}
-                    {/*       return <>*/}
-                    {/*           <img alt="uploaded" src={val.url} className="image col-4"/>*/}
-                    {/*       </>*/}
-
-
-                    {/*   })}*/}
                        <button onClick={() => {post(value.id)}} on className="btn-blue createPost" role="button" type="submit">See Images</button>
                     <button onClick={() => {deleteReview(value.id)}} className="btn-red createPost hide" role="button" type="submit">Delete</button>
                 </div>
@@ -154,7 +128,7 @@ const post = (postId) => {
                         <input className="form" id="inoutCreatePost"  name="title" placeholder="Author" onChange={(e => setTitle(e.target.value) )} />
                     </div>
                     <div className="mb-2">
-                        <input id="inoutCreatePost" className="review" as="textarea" name="review" placeholder="Review" onChange={(e => setReview(e.target.value))} />
+                        <textarea id="inoutCreatePost" className="review" as="textarea" name="review" placeholder="Review" onChange={(e => setReview(e.target.value))} />
                     </div>
                     <div className="mb-2">
                         <input id="inoutCreatePost"  name="imageUrl" placeholder="ImageUrl" onChange={(e => setUrl(e.target.value))}/>

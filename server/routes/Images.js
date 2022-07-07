@@ -29,7 +29,6 @@ router.options('/:postId', function (req, res,next) {
 router.post('/',cors(corsOptions),async(req,res)=> {
     const imagesUrl = req.body.url;
     const postId = req.body.postId;
-    console.log(imagesUrl)
     console.log(postId)
     await Images.create({url: imagesUrl, PostId: postId})
     // console.log(imagesUrl)
