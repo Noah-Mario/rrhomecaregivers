@@ -12,6 +12,7 @@ function Testimonials() {
     const [title, setTitle] = useState ("")
     const [review, setReview] = useState("")
     const [url, setUrl] = useState("")
+    const [url2, setUrl2] = useState("")
     const [listOfPosts, setListOfPosts] = useState([]);
     const [listOfImages, setListOfImages] = useState([]);
 
@@ -38,7 +39,7 @@ function Testimonials() {
             // let last = listOfPosts.at(-1)
             // let lastId = last.id + 1
             if (endpoints[i] === "http://localhost:3306/images") {
-                axios.post("http://localhost:3306/images", {url: url, postId: 1 }).then((res) => {
+                axios.post("http://localhost:3306/images", {url: url, url2: url2, postId: 1 }).then((res) => {
                     console.log(res)
                 })
                 // if(last === false){
@@ -78,12 +79,30 @@ const post = (postId) => {
 
     }
 
+    let deletePoints = [1,2];
+
     const deleteReview = (id) => {
-        axios.delete(`http://localhost:3306/posts/${id}`).then((res) =>
-            console.log("sent")
-        )
-        // window.location.reload()
+        let i = 0;
+        while ( i < deletePoints.length) {
+            if(deletePoints[i] === 1){
+                axios.delete(`http://localhost:3306/posts/${id}`).then((res) =>
+                    console.log("sent")
+                )
+            }else{
+                axios.delete(`http://localhost:3306/images/${id}`).then((res) =>
+                    console.log("sent")
+                )
+            }i++
+        }
+
     }
+
+    // const deleteReview = (id) => {
+    //     axios.delete(`http://localhost:3306/posts/${id}`).then((res) =>
+    //         console.log("sent")
+    //     )
+    //     // window.location.reload()
+    // }
 
     const getUser = (e) => {
         axios.get("http://localhost:3306/users", {withCredentials: true, credentials: 'include'}).then((res) => {
@@ -132,6 +151,9 @@ const post = (postId) => {
                     </div>
                     <div className="mb-2">
                         <input id="inoutCreatePost"  name="imageUrl" placeholder="ImageUrl" onChange={(e => setUrl(e.target.value))}/>
+                    </div>
+                    <div className="mb-2">
+                        <input id="inoutCreatePost"  name="imageUrl" placeholder="ImageUrl" onChange={(e => setUrl2(e.target.value))}/>
                     </div>
                     <button className="button-36" role="button" type="submit">Submit</button>
                 </form>
