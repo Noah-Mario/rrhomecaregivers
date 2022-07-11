@@ -30,10 +30,13 @@ app.use("/users", userRouter)
 
 db.Posts.hasMany(db.Images, {
     as:'images',
-    allowNull: false
+    allowNull: false,
+    onDelete: 'cascade'
 })
 
-db.Images.belongsTo(db.Posts)
+db.Images.belongsTo(db.Posts,{
+    onDelete: 'cascade'
+})
 
 app.options('/posts',function (req, res,next) {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
