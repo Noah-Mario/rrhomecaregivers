@@ -35,10 +35,18 @@ router.options('/:id', function (req, res,next) {
 
 router.post('/',cors(corsOptions),async(req,res)=> {
     const imagesUrl2 = req.body.url2
+    const imagesUrl3 = req.body.url3
+    const imagesUrl4 = req.body.url4
+    const imagesUrl5 = req.body.url5
+    const imagesUrl6 = req.body.url6
     const imagesUrl = req.body.url;
     const postId = req.body.postId;
+
     await Images.bulkCreate([{url: imagesUrl, PostId: postId},
-        {url: imagesUrl2, PostId: postId}]).then((err) => {
+        {url: imagesUrl2, PostId: postId},{url: imagesUrl3, PostId: postId},
+        {url: imagesUrl4, PostId: postId},{url: imagesUrl5, PostId: postId},
+        {url: imagesUrl6, PostId: postId}])
+        .then((err) => {
             console.log(err)
     })
     // console.log(imagesUrl)
